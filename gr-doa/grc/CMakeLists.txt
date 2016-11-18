@@ -18,5 +18,6 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    doa_capon_ccf.xml DESTINATION share/gnuradio/grc/blocks
+    doa_capon_ccf.xml
+    doa_timestamp_ccf.xml DESTINATION share/gnuradio/grc/blocks
 )
