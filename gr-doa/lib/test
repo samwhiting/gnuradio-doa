@@ -1,0 +1,4 @@
+#!/bin/bash
+cd ../build
+make
+./python/qa_capon_ccf_test.sh
