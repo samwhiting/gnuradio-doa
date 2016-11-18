@@ -1,0 +1,5 @@
+#!/bin/bash
+cd build
+make
+sudo make install
+sudo ldconfig
