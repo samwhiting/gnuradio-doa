@@ -41,7 +41,7 @@ class qa_capon_ccf (gr_unittest.TestCase):
         # blocks
         self.src1 = blocks.vector_source_c(self.data1,False,self.vector_length)
         self.src2 = blocks.vector_source_c(self.data2,False,self.vector_length)
-        self.capon = danaC.capon_ccf(self.vector_length)
+        self.capon = doa.capon_ccf(self.vector_length)
         self.snk = blocks.vector_sink_f()
 
         # connections
@@ -52,7 +52,7 @@ class qa_capon_ccf (gr_unittest.TestCase):
 
         # check data
         self.results = self.snk.data()
-        self.assertEqual(self.expected,self.results)
+        self.assertAlmostEqual(self.expected,self.results[0],3)
 
 if __name__ == '__main__':
     gr_unittest.run(qa_capon_ccf, "qa_capon_ccf.xml")
