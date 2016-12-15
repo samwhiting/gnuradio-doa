@@ -26,7 +26,8 @@ include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND doa_sources
     capon_ccf_impl.cc
-    unwrap_ff_impl.cc )
+    unwrap_ff_impl.cc
+    linearslope_ff_impl.cc )
 
 set(doa_sources "${doa_sources}" PARENT_SCOPE)
 if(NOT doa_sources)

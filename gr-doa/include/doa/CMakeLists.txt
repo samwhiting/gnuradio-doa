@@ -23,5 +23,6 @@
 install(FILES
     api.h
     capon_ccf.h
-    unwrap_ff.h DESTINATION include/doa
+    unwrap_ff.h
+    linearslope_ff.h DESTINATION include/doa
 )
