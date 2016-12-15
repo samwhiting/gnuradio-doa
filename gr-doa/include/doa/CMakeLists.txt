@@ -22,5 +22,6 @@
 ########################################################################
 install(FILES
     api.h
-    capon_ccf.h DESTINATION include/doa
+    capon_ccf.h
+    unwrap_ff.h DESTINATION include/doa
 )

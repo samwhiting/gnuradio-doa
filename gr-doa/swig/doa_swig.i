@@ -9,8 +9,12 @@
 
 %{
 #include "doa/capon_ccf.h"
+#include "doa/unwrap_ff.h"
 %}
 
 
 %include "doa/capon_ccf.h"
 GR_SWIG_BLOCK_MAGIC2(doa, capon_ccf);
+
+%include "doa/unwrap_ff.h"
+GR_SWIG_BLOCK_MAGIC2(doa, unwrap_ff);
