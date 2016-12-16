@@ -45,3 +45,4 @@ GR_ADD_TEST(qa_capon_ccf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_cap
 GR_ADD_TEST(qa_timestamp_ccf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_timestamp_ccf.py)
 GR_ADD_TEST(qa_unwrap_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_unwrap_ff.py)
 GR_ADD_TEST(qa_linearslope_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_linearslope_ff.py)
+GR_ADD_TEST(qa_mode_ii ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_mode_ii.py)

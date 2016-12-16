@@ -24,5 +24,6 @@ install(FILES
     api.h
     capon_ccf.h
     unwrap_ff.h
-    linearslope_ff.h DESTINATION include/doa
+    linearslope_ff.h
+    mode_ii.h DESTINATION include/doa
 )

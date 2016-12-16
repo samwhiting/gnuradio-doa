@@ -26,11 +26,13 @@
  */
 
 #include "qa_doa.h"
+#include "qa_mode_ii.h"
 
 CppUnit::TestSuite *
 qa_doa::suite()
 {
   CppUnit::TestSuite *s = new CppUnit::TestSuite("doa");
+  s->addTest(gr::doa::qa_mode_ii::suite());
 
   return s;
 }

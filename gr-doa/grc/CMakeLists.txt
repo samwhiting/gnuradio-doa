@@ -20,5 +20,6 @@ install(FILES
     doa_capon_ccf.xml
     doa_timestamp_ccf.xml
     doa_unwrap_ff.xml
-    doa_linearslope_ff.xml DESTINATION share/gnuradio/grc/blocks
+    doa_linearslope_ff.xml
+    doa_mode_ii.xml DESTINATION share/gnuradio/grc/blocks
 )

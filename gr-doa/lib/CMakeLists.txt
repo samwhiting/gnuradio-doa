@@ -27,7 +27,8 @@ link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND doa_sources
     capon_ccf_impl.cc
     unwrap_ff_impl.cc
-    linearslope_ff_impl.cc )
+    linearslope_ff_impl.cc
+    mode_ii_impl.cc )
 
 set(doa_sources "${doa_sources}" PARENT_SCOPE)
 if(NOT doa_sources)
@@ -57,11 +58,11 @@ GR_LIBRARY_FOO(gnuradio-doa RUNTIME_COMPONENT "doa_runtime" DEVEL_COMPONENT "doa
 include(GrTest)
 
 include_directories(${CPPUNIT_INCLUDE_DIRS})
-
 list(APPEND test_doa_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/test_doa.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/qa_doa.cc
-)
+    ${CMAKE_CURRENT_SOURCE_DIR}/qa_mode_ii.cc
+    )
 
 add_executable(test-doa ${test_doa_sources})
 

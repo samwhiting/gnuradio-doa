@@ -11,6 +11,7 @@
 #include "doa/capon_ccf.h"
 #include "doa/unwrap_ff.h"
 #include "doa/linearslope_ff.h"
+#include "doa/mode_ii.h"
 %}
 
 
@@ -21,3 +22,6 @@ GR_SWIG_BLOCK_MAGIC2(doa, capon_ccf);
 GR_SWIG_BLOCK_MAGIC2(doa, unwrap_ff);
 %include "doa/linearslope_ff.h"
 GR_SWIG_BLOCK_MAGIC2(doa, linearslope_ff);
+
+%include "doa/mode_ii.h"
+GR_SWIG_BLOCK_MAGIC2(doa, mode_ii);
