@@ -2,7 +2,7 @@
 <block>
   <name>Mode</name>
   <key>doa_mode_ii</key>
-  <category>doa</category>
+  <category>[doa]</category>
   <import>import doa</import>
   <make>doa.mode_ii($vector_size, $max_value)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
