@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Capon Test
-# Generated: Sat Dec 17 14:56:39 2016
+# Generated: Mon Dec 19 17:07:25 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -72,7 +72,7 @@ class capon_test(gr.top_block, Qt.QWidget):
         self.speed_of_light = speed_of_light = 299792458
         self.slope_samples = slope_samples = 50
         self.samp_rate = samp_rate = 32000
-        self.rtl_samp_rate = rtl_samp_rate = 2.048e6
+        self.rtl_samp_rate = rtl_samp_rate = 2048000
         self.pi = pi = 3.1415926535
         self.mode_samples = mode_samples = 50
         self.lag_of_signals = lag_of_signals = lag
@@ -84,7 +84,6 @@ class capon_test(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
-        self.probe1 = blocks.probe_signal_i()
         self.tab = Qt.QTabWidget()
         self.tab_widget_0 = Qt.QWidget()
         self.tab_layout_0 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.tab_widget_0)
@@ -97,34 +96,9 @@ class capon_test(gr.top_block, Qt.QWidget):
         self.tab_layout_1.addLayout(self.tab_grid_layout_1)
         self.tab.addTab(self.tab_widget_1, 'Tab 1')
         self.top_layout.addWidget(self.tab)
-        
-        def _lag_probe():
-            while True:
-                val = self.probe1.level()
-                try:
-                    self.set_lag(val)
-                except AttributeError:
-                    pass
-                time.sleep(1.0 / (5))
-        _lag_thread = threading.Thread(target=_lag_probe)
-        _lag_thread.daemon = True
-        _lag_thread.start()
-            
+        self.probe1 = blocks.probe_signal_i()
         self.to_samples_per_second = blocks.multiply_const_vff((rtl_samp_rate/(center_freq*2*pi), ))
         self.to_radians_per_second = blocks.multiply_const_vff((rtl_samp_rate/n_points, ))
-        self.rtlsdr_source_0_0 = osmosdr.source( args="numchan=" + str(1) + " " + "rtl=1" )
-        self.rtlsdr_source_0_0.set_sample_rate(rtl_samp_rate)
-        self.rtlsdr_source_0_0.set_center_freq(center_freq, 0)
-        self.rtlsdr_source_0_0.set_freq_corr(0, 0)
-        self.rtlsdr_source_0_0.set_dc_offset_mode(0, 0)
-        self.rtlsdr_source_0_0.set_iq_balance_mode(0, 0)
-        self.rtlsdr_source_0_0.set_gain_mode(False, 0)
-        self.rtlsdr_source_0_0.set_gain(10, 0)
-        self.rtlsdr_source_0_0.set_if_gain(20, 0)
-        self.rtlsdr_source_0_0.set_bb_gain(20, 0)
-        self.rtlsdr_source_0_0.set_antenna('', 0)
-        self.rtlsdr_source_0_0.set_bandwidth(0, 0)
-          
         self.rtlsdr_source_0 = osmosdr.source( args="numchan=" + str(1) + " " + "rtl=0" )
         self.rtlsdr_source_0.set_sample_rate(rtl_samp_rate)
         self.rtlsdr_source_0.set_center_freq(center_freq, 0)
@@ -148,8 +122,8 @@ class capon_test(gr.top_block, Qt.QWidget):
             1 # Number of inputs
         )
         self.qtgui_vector_sink_f_0.set_update_time(0.10)
-        self.qtgui_vector_sink_f_0.set_y_axis(-10, 10)
-        self.qtgui_vector_sink_f_0.enable_autoscale(True)
+        self.qtgui_vector_sink_f_0.set_y_axis(-10, 10000000)
+        self.qtgui_vector_sink_f_0.enable_autoscale(False)
         self.qtgui_vector_sink_f_0.enable_grid(False)
         self.qtgui_vector_sink_f_0.set_x_axis_units("")
         self.qtgui_vector_sink_f_0.set_y_axis_units("")
@@ -284,9 +258,23 @@ class capon_test(gr.top_block, Qt.QWidget):
         self._lag_of_signals_tool_bar.addWidget(self._lag_of_signals_label)
         self.tab_layout_0.addWidget(self._lag_of_signals_tool_bar)
           
+        
+        def _lag_probe():
+            while True:
+                val = self.probe1.level()
+                try:
+                    self.set_lag(val)
+                except AttributeError:
+                    pass
+                time.sleep(1.0 / (10))
+        _lag_thread = threading.Thread(target=_lag_probe)
+        _lag_thread.daemon = True
+        _lag_thread.start()
+            
         self.doa_unwrap_ff_0 = doa.unwrap_ff(slope_samples, -3.14159265, 3.14159265)
         self.doa_mode_ii_0 = doa.mode_ii(mode_samples, fft_width)
         self.doa_linearslope_ff_0 = doa.linearslope_ff(slope_samples)
+        self.doa_lin_delay_cc_0 = doa.lin_delay_cc(rtl_samp_rate, 10)
         self.doa_capon_ccf_0 = doa.capon_ccf(down_width)
         self.cross_correlation_0 = cross_correlation(
             xcorr_width=8192,
@@ -301,7 +289,6 @@ class capon_test(gr.top_block, Qt.QWidget):
         self.blocks_keep_one_in_n_0_0 = blocks.keep_one_in_n(gr.sizeof_gr_complex*1, downsample)
         self.blocks_keep_one_in_n_0 = blocks.keep_one_in_n(gr.sizeof_gr_complex*1, downsample)
         self.blocks_float_to_int_0 = blocks.float_to_int(1, 1)
-        self.blocks_delay_0 = blocks.delay(gr.sizeof_gr_complex*1, lag)
         self.blocks_complex_to_mag_squared_0 = blocks.complex_to_mag_squared(fft_width)
         self.blocks_argmax_xx_0_0 = blocks.argmax_fs(fft_width)
 
@@ -312,7 +299,6 @@ class capon_test(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_argmax_xx_0_0, 0), (self.blocks_short_to_float_0, 0))    
         self.connect((self.blocks_complex_to_mag_squared_0, 0), (self.blocks_argmax_xx_0_0, 0))    
         self.connect((self.blocks_complex_to_mag_squared_0, 0), (self.qtgui_vector_sink_f_0, 0))    
-        self.connect((self.blocks_delay_0, 0), (self.low_pass_filter_0, 0))    
         self.connect((self.blocks_float_to_int_0, 0), (self.blocks_stream_to_vector_3, 0))    
         self.connect((self.blocks_keep_one_in_n_0, 0), (self.blocks_stream_to_vector_0_0, 0))    
         self.connect((self.blocks_keep_one_in_n_0_0, 0), (self.blocks_stream_to_vector_0, 0))    
@@ -324,16 +310,18 @@ class capon_test(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_vector_to_stream_0, 0), (self.qtgui_time_sink_x_0_0, 0))    
         self.connect((self.cross_correlation_0, 0), (self.blocks_complex_to_mag_squared_0, 0))    
         self.connect((self.doa_capon_ccf_0, 0), (self.blocks_stream_to_vector_2, 0))    
+        self.connect((self.doa_lin_delay_cc_0, 1), (self.cross_correlation_0, 1))    
+        self.connect((self.doa_lin_delay_cc_0, 0), (self.cross_correlation_0, 0))    
+        self.connect((self.doa_lin_delay_cc_0, 1), (self.low_pass_filter_0, 0))    
+        self.connect((self.doa_lin_delay_cc_0, 0), (self.low_pass_filter_0_0, 0))    
         self.connect((self.doa_linearslope_ff_0, 0), (self.to_radians_per_second, 0))    
         self.connect((self.doa_mode_ii_0, 0), (self.probe1, 0))    
         self.connect((self.doa_unwrap_ff_0, 0), (self.blocks_vector_to_stream_0, 0))    
         self.connect((self.doa_unwrap_ff_0, 0), (self.doa_linearslope_ff_0, 0))    
         self.connect((self.low_pass_filter_0, 0), (self.blocks_keep_one_in_n_0_0, 0))    
         self.connect((self.low_pass_filter_0_0, 0), (self.blocks_keep_one_in_n_0, 0))    
-        self.connect((self.rtlsdr_source_0, 0), (self.cross_correlation_0, 0))    
-        self.connect((self.rtlsdr_source_0, 0), (self.low_pass_filter_0_0, 0))    
-        self.connect((self.rtlsdr_source_0_0, 0), (self.blocks_delay_0, 0))    
-        self.connect((self.rtlsdr_source_0_0, 0), (self.cross_correlation_0, 1))    
+        self.connect((self.rtlsdr_source_0, 0), (self.doa_lin_delay_cc_0, 0))    
+        self.connect((self.rtlsdr_source_0, 0), (self.doa_lin_delay_cc_0, 1))    
         self.connect((self.to_radians_per_second, 0), (self.to_samples_per_second, 0))    
         self.connect((self.to_samples_per_second, 0), (self.qtgui_time_sink_x_0_0_0, 0))    
 
@@ -356,7 +344,6 @@ class capon_test(gr.top_block, Qt.QWidget):
     def set_lag(self, lag):
         self.lag = lag
         self.set_lag_of_signals(self._lag_of_signals_formatter(self.lag))
-        self.blocks_delay_0.set_dly(self.lag)
 
     def get_downsample(self):
         return self.downsample
@@ -402,7 +389,6 @@ class capon_test(gr.top_block, Qt.QWidget):
         self.rtl_samp_rate = rtl_samp_rate
         self.to_samples_per_second.set_k((self.rtl_samp_rate/(self.center_freq*2*self.pi), ))
         self.to_radians_per_second.set_k((self.rtl_samp_rate/self.n_points, ))
-        self.rtlsdr_source_0_0.set_sample_rate(self.rtl_samp_rate)
         self.rtlsdr_source_0.set_sample_rate(self.rtl_samp_rate)
         self.low_pass_filter_0_0.set_taps(firdes.low_pass(10, self.rtl_samp_rate, self.cutoff, self.transition, firdes.WIN_KAISER, 6.76))
         self.low_pass_filter_0.set_taps(firdes.low_pass(10, self.rtl_samp_rate, self.cutoff, self.transition, firdes.WIN_KAISER, 6.76))
@@ -453,7 +439,6 @@ class capon_test(gr.top_block, Qt.QWidget):
     def set_center_freq(self, center_freq):
         self.center_freq = center_freq
         self.to_samples_per_second.set_k((self.rtl_samp_rate/(self.center_freq*2*self.pi), ))
-        self.rtlsdr_source_0_0.set_center_freq(self.center_freq, 0)
         self.rtlsdr_source_0.set_center_freq(self.center_freq, 0)
 
 

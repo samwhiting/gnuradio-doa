@@ -28,7 +28,8 @@ list(APPEND doa_sources
     capon_ccf_impl.cc
     unwrap_ff_impl.cc
     linearslope_ff_impl.cc
-    mode_ii_impl.cc )
+    mode_ii_impl.cc
+    lin_delay_cc_impl.cc )
 
 set(doa_sources "${doa_sources}" PARENT_SCOPE)
 if(NOT doa_sources)

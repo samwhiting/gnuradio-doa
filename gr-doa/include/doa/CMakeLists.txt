@@ -25,5 +25,6 @@ install(FILES
     capon_ccf.h
     unwrap_ff.h
     linearslope_ff.h
-    mode_ii.h DESTINATION include/doa
+    mode_ii.h
+    lin_delay_cc.h DESTINATION include/doa
 )

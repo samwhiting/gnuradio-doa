@@ -256,7 +256,7 @@
     </param>
     <param>
       <key>poll_rate</key>
-      <value>5</value>
+      <value>10</value>
     </param>
   </block>
   <block>
@@ -407,7 +407,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>2.048e6</value>
+      <value>2048000</value>
     </param>
   </block>
   <block>
@@ -636,7 +636,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(240, 484)</value>
+      <value>(456, 412)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -836,7 +836,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(552, 372)</value>
+      <value>(768, 372)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -887,7 +887,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(552, 420)</value>
+      <value>(768, 420)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1032,7 +1032,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(680, 420)</value>
+      <value>(896, 420)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1083,7 +1083,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(680, 372)</value>
+      <value>(896, 372)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1134,7 +1134,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1048, 396)</value>
+      <value>(1264, 396)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1236,7 +1236,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(848, 300)</value>
+      <value>(1064, 324)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1330,7 +1330,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(872, 384)</value>
+      <value>(1088, 384)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1354,6 +1354,53 @@
     </param>
   </block>
   <block>
+    <key>doa_lin_delay_cc</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>delay</key>
+      <value>30</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(256, 384)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>doa_lin_delay_cc_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>rtl_samp_rate</value>
+    </param>
+  </block>
+  <block>
     <key>doa_linearslope_ff</key>
     <param>
       <key>alias</key>
@@ -1373,7 +1420,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(856, 236)</value>
+      <value>(936, 236)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1463,7 +1510,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1048, 276)</value>
+      <value>(1264, 276)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1522,7 +1569,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>type</key>
@@ -1530,7 +1577,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(352, 440)</value>
+      <value>(568, 424)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1597,7 +1644,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>type</key>
@@ -1605,7 +1652,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(352, 264)</value>
+      <value>(568, 280)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1715,7 +1762,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(608, 280)</value>
+      <value>(824, 280)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -2409,7 +2456,7 @@
     <key>qtgui_vector_sink_f</key>
     <param>
       <key>autoscale</key>
-      <value>True</value>
+      <value>False</value>
     </param>
     <param>
       <key>average</key>
@@ -2661,7 +2708,7 @@
     </param>
     <param>
       <key>ymax</key>
-      <value>10</value>
+      <value>10000000</value>
     </param>
     <param>
       <key>ymin</key>
@@ -5804,6 +5851,30 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>doa_lin_delay_cc_0</source_block_id>
+    <sink_block_id>blocks_delay_0</sink_block_id>
+    <source_key>1</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>doa_lin_delay_cc_0</source_block_id>
+    <sink_block_id>cross_correlation_0</sink_block_id>
+    <source_key>1</source_key>
+    <sink_key>1</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>doa_lin_delay_cc_0</source_block_id>
+    <sink_block_id>cross_correlation_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>doa_lin_delay_cc_0</source_block_id>
+    <sink_block_id>low_pass_filter_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>doa_linearslope_ff_0</source_block_id>
     <sink_block_id>to_radians_per_second</sink_block_id>
     <source_key>0</source_key>
@@ -5847,19 +5918,7 @@
   </connection>
   <connection>
     <source_block_id>rtlsdr_source_0</source_block_id>
-    <sink_block_id>cross_correlation_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>rtlsdr_source_0</source_block_id>
-    <sink_block_id>low_pass_filter_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>rtlsdr_source_0_0</source_block_id>
-    <sink_block_id>blocks_delay_0</sink_block_id>
+    <sink_block_id>doa_lin_delay_cc_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -5871,7 +5930,7 @@
   </connection>
   <connection>
     <source_block_id>rtlsdr_source_0_0</source_block_id>
-    <sink_block_id>cross_correlation_0</sink_block_id>
+    <sink_block_id>doa_lin_delay_cc_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>1</sink_key>
   </connection>

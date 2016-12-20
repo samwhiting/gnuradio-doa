@@ -21,5 +21,6 @@ install(FILES
     doa_timestamp_ccf.xml
     doa_unwrap_ff.xml
     doa_linearslope_ff.xml
-    doa_mode_ii.xml DESTINATION share/gnuradio/grc/blocks
+    doa_mode_ii.xml
+    doa_lin_delay_cc.xml DESTINATION share/gnuradio/grc/blocks
 )
