@@ -31,6 +31,9 @@ namespace gr {
      private:
       int d_vector_size;
       float slope(const float* in);
+      float x_mean;
+      float* x_hat;
+      float denominator;
 
      public:
       linearslope_ff_impl(int vector_size);

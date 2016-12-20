@@ -43,29 +43,37 @@ namespace gr {
               gr::io_signature::make(1, 1, sizeof(float)*vector_size),
               gr::io_signature::make(1, 1, sizeof(float))),
         d_vector_size(vector_size)
-    {}
+    {
+        x_mean = (d_vector_size-1)/2.0;
+        denominator = 0;
+        float tmp;
+
+        x_hat = new float[d_vector_size];
+        for (int i=0; i<d_vector_size; ++i) {
+            tmp = i - x_mean;
+            x_hat[i] = tmp;
+            denominator += tmp*tmp; // (X-X_mean)^2
+        }
+    }
 
     /*
      * Our virtual destructor.
      */
     linearslope_ff_impl::~linearslope_ff_impl()
     {
+        delete x_hat;
     }
 
     float linearslope_ff_impl::slope(const float* in) {
-        float x_mean = (d_vector_size-1)/2.0;
         float y_mean = 0;
-        float numerator = 0, denominator = 0;
-        float tmp;
+        float numerator = 0;
         for (int i=0; i<d_vector_size; ++i) {
             y_mean += in[i];
         }
         y_mean /= (float) d_vector_size;
 
         for (int i=0; i<d_vector_size; ++i) {
-            tmp = i-x_mean;
-            numerator += tmp * (in[i]-y_mean);  // (x-x_mean)(y-y_mean)
-            denominator += tmp*tmp;             // (x-x_mean)^2
+            numerator += x_hat[i] * (in[i]-y_mean);  // (x-x_mean)(y-y_mean)
         }
         return numerator/denominator;
     }

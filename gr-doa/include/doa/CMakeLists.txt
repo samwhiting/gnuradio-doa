@@ -26,5 +26,6 @@ install(FILES
     unwrap_ff.h
     linearslope_ff.h
     mode_ii.h
-    lin_delay_cc.h DESTINATION include/doa
+    lin_delay_cc.h
+    peak_estimator_cff.h DESTINATION include/doa
 )

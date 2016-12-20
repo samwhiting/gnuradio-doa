@@ -13,6 +13,7 @@
 #include "doa/linearslope_ff.h"
 #include "doa/mode_ii.h"
 #include "doa/lin_delay_cc.h"
+#include "doa/peak_estimator_cff.h"
 %}
 
 
@@ -29,3 +30,5 @@ GR_SWIG_BLOCK_MAGIC2(doa, mode_ii);
 
 %include "doa/lin_delay_cc.h"
 GR_SWIG_BLOCK_MAGIC2(doa, lin_delay_cc);
+%include "doa/peak_estimator_cff.h"
+GR_SWIG_BLOCK_MAGIC2(doa, peak_estimator_cff);
