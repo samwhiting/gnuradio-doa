@@ -19,13 +19,13 @@
   <param>
       <name>Min</name>
       <key>min</key>
-      <value>0</value>
+      <value>-3.141593</value>
       <type>float</type>
   </param>
   <param>
       <name>Max</name>
       <key>max</key>
-      <value>6.2832</value>
+      <value>3.141593</value>
       <type>float</type>
   </param>
 

@@ -36,10 +36,13 @@ namespace gr {
          std::queue<gr_complex> buffer;
          std::queue<gr_complex> points;
          double offset, curr_offset;
+         gr::thread::mutex d_mutex_delay;
 
      public:
       lin_delay_cc_impl(int samp_rate, float delay);
       ~lin_delay_cc_impl();
+      void set_dly(float new_delay);
+      float dly() const { return d_delay; }
 
       // Where all the action really happens
       int work(int noutput_items,

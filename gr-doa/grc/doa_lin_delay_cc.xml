@@ -5,6 +5,7 @@
   <category>[doa]</category>
   <import>import doa</import>
   <make>doa.lin_delay_cc($samp_rate, $delay)</make>
+  <callback>set_dly($delay)</callback>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name

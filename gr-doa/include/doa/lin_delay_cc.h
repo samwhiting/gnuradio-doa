@@ -47,6 +47,9 @@ namespace gr {
        * creating new instances.
        */
       static sptr make(int samp_rate, float delay);
+
+      virtual float dly() const = 0;
+      virtual void set_dly(float new_delay) = 0;
     };
 
   } // namespace doa

@@ -43,11 +43,10 @@ namespace gr {
               gr::io_signature::make(2, 2, sizeof(gr_complex)),
               gr::io_signature::make(2, 2, sizeof(gr_complex))),
         d_samp_rate(samp_rate),
-        d_delay(delay),
         buffer(),
         points()
     {
-        offset = fabs(d_delay) / (double) d_samp_rate;
+        set_dly(delay);
         curr_offset = 0;
     }
 
@@ -67,11 +66,23 @@ namespace gr {
         return ret;
     }
 
+    void lin_delay_cc_impl::set_dly(float new_delay) {
+        if (new_delay != d_delay) {
+            gr::thread::scoped_lock l(d_mutex_delay);
+            d_delay = new_delay;
+            //printf("linear delay is now %f samples per second\n", d_delay);
+            offset = fabs(d_delay) / (double) d_samp_rate;
+            //printf("the new offset is %.9f\n", offset);
+        }
+    }
+
     int
     lin_delay_cc_impl::work(int noutput_items,
         gr_vector_const_void_star &input_items,
         gr_vector_void_star &output_items)
     {
+      gr::thread::scoped_lock l(d_mutex_delay);
+
       const gr_complex *ref_in;
       const gr_complex *in;
       gr_complex *ref_out;
