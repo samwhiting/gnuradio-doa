@@ -14,6 +14,7 @@
 #include "doa/mode_ii.h"
 #include "doa/lin_delay_cc.h"
 #include "doa/peak_estimator_cff.h"
+#include "doa/cub_delay_cc.h"
 %}
 
 
@@ -32,3 +33,5 @@ GR_SWIG_BLOCK_MAGIC2(doa, mode_ii);
 GR_SWIG_BLOCK_MAGIC2(doa, lin_delay_cc);
 %include "doa/peak_estimator_cff.h"
 GR_SWIG_BLOCK_MAGIC2(doa, peak_estimator_cff);
+%include "doa/cub_delay_cc.h"
+GR_SWIG_BLOCK_MAGIC2(doa, cub_delay_cc);

@@ -23,23 +23,23 @@
 #endif
 
 #include <gnuradio/io_signature.h>
-#include "lin_delay_cc_impl.h"
+#include "cub_delay_cc_impl.h"
 
 namespace gr {
   namespace doa {
 
-    lin_delay_cc::sptr
-    lin_delay_cc::make(int samp_rate, float delay)
+    cub_delay_cc::sptr
+    cub_delay_cc::make(int samp_rate, float delay)
     {
       return gnuradio::get_initial_sptr
-        (new lin_delay_cc_impl(samp_rate, delay));
+        (new cub_delay_cc_impl(samp_rate, delay));
     }
 
     /*
      * The private constructor
      */
-    lin_delay_cc_impl::lin_delay_cc_impl(int samp_rate, float delay)
-      : gr::sync_block("lin_delay_cc",
+    cub_delay_cc_impl::cub_delay_cc_impl(int samp_rate, float delay)
+      : gr::sync_block("cub_delay_cc",
               gr::io_signature::make(2, 2, sizeof(gr_complex)),
               gr::io_signature::make(2, 2, sizeof(gr_complex))),
         d_samp_rate(samp_rate),
@@ -47,35 +47,28 @@ namespace gr {
         points()
     {
         set_dly(delay);
-        curr_offset = 0;
+        curr_offset=0;
     }
 
     /*
      * Our virtual destructor.
      */
-    lin_delay_cc_impl::~lin_delay_cc_impl()
+    cub_delay_cc_impl::~cub_delay_cc_impl()
     {
     }
 
-    gr_complex lin_delay_cc_impl::interpolate(const gr_complex &p1, const gr_complex &p2, float ratio) {
-        //return p1 + (p2 - p1)*ratio;
-
-        // unwrap the angle
-        float ang1 = arg(p1);
-        float ang2 = arg(p2);
-        if (abs(ang2-ang1) > 3.141593) {
-            if (ang2 > ang1) {
-                ang1 += 6.283185;
-            } else {
-                ang2 += 6.283185;
-            }
-        }
-        float mag = abs(p1) + (abs(p2) - abs(p1))*ratio;
-        float ang = ang1 + (ang2 - ang1)*ratio;
-        return std::polar(mag, ang);
+    gr_complex cub_delay_cc_impl::interpolate(const gr_complex &p0, const gr_complex &p1, const gr_complex &p2, const gr_complex &p3, float mu) {
+        gr_complex a0, a1, a2;
+        float mu2;
+        mu2 = mu*mu;
+        a0 = p3 - p2 - p0 + p1;
+        a1 = p0 - p1 - a0;
+        a2 = p2 - p0;
+        
+        return (a0*mu*mu2 + a1*mu2 + a2*mu + p1);
     }
 
-    void lin_delay_cc_impl::set_dly(float new_delay) {
+    void cub_delay_cc_impl::set_dly(float new_delay) {
         if (new_delay != d_delay) {
             gr::thread::scoped_lock l(d_mutex_delay);
             d_delay = new_delay;
@@ -87,7 +80,7 @@ namespace gr {
     }
 
     int
-    lin_delay_cc_impl::work(int noutput_items,
+    cub_delay_cc_impl::work(int noutput_items,
         gr_vector_const_void_star &input_items,
         gr_vector_void_star &output_items)
     {
@@ -111,8 +104,10 @@ namespace gr {
       }
 
       if (points.empty()) {
-          points.push(gr_complex(0,0));
-          points.push(gr_complex(0,0));
+          points.push_back(gr_complex(0,0));
+          points.push_back(gr_complex(0,0));
+          points.push_back(gr_complex(0,0));
+          points.push_back(gr_complex(0,0));
       }
 
       for (int i=0; i<noutput_items; ++i) {
@@ -120,16 +115,12 @@ namespace gr {
           ref_out[i] = ref_in[i];
           if (curr_offset > 1) {
               curr_offset--;
-              //printf("<><><><><><><><><><>\nlinear delay wrapped around\n");
-              //printf("offset: %f\n", offset);
-              //printf("noutput_items: %d\n", noutput_items);
-              //printf("buffer size: %lu\n", buffer.size());
           } else {
-              points.pop();
-              points.push(buffer.front());
+              points.pop_front();
+              points.push_back(buffer.front());
               buffer.pop();
           }
-          out[i] = interpolate(points.front(), points.back(), 1-curr_offset);
+          out[i] = interpolate(points[0], points[1], points[2], points[3], 1-curr_offset);
           curr_offset += offset;
       }
 

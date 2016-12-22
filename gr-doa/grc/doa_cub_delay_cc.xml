@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <block>
-  <name>Linear Align</name>
-  <key>doa_lin_delay_cc</key>
+  <name>Cubic Align</name>
+  <key>doa_cub_delay_cc</key>
   <category>[doa]</category>
   <import>import doa</import>
-  <make>doa.lin_delay_cc($samp_rate, $delay)</make>
+  <make>doa.cub_delay_cc($samp_rate, $delay)</make>
   <callback>set_dly($delay)</callback>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
