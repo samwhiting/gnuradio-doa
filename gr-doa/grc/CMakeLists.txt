@@ -24,5 +24,6 @@ install(FILES
     doa_mode_ii.xml
     doa_lin_delay_cc.xml
     doa_peak_estimator_cff.xml
-    doa_cub_delay_cc.xml DESTINATION share/gnuradio/grc/blocks
+    doa_cub_delay_cc.xml
+    doa_cumulative_ff.xml DESTINATION share/gnuradio/grc/blocks
 )

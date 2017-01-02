@@ -31,7 +31,8 @@ list(APPEND doa_sources
     mode_ii_impl.cc
     lin_delay_cc_impl.cc
     peak_estimator_cff_impl.cc
-    cub_delay_cc_impl.cc )
+    cub_delay_cc_impl.cc
+    cumulative_ff_impl.cc )
 
 set(doa_sources "${doa_sources}" PARENT_SCOPE)
 if(NOT doa_sources)

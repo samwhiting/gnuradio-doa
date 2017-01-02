@@ -28,5 +28,6 @@ install(FILES
     mode_ii.h
     lin_delay_cc.h
     peak_estimator_cff.h
-    cub_delay_cc.h DESTINATION include/doa
+    cub_delay_cc.h
+    cumulative_ff.h DESTINATION include/doa
 )

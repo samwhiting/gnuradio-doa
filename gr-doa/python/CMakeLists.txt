@@ -49,3 +49,4 @@ GR_ADD_TEST(qa_mode_ii ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_mode_
 GR_ADD_TEST(qa_lin_delay_cc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_lin_delay_cc.py)
 GR_ADD_TEST(qa_peak_estimator_cff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_peak_estimator_cff.py)
 GR_ADD_TEST(qa_cub_delay_cc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_cub_delay_cc.py)
+GR_ADD_TEST(qa_cumulative_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_cumulative_ff.py)
