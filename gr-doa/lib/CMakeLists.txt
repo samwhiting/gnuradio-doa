@@ -32,7 +32,9 @@ list(APPEND doa_sources
     lin_delay_cc_impl.cc
     peak_estimator_cff_impl.cc
     cub_delay_cc_impl.cc
-    cumulative_ff_impl.cc )
+    cumulative_ff_impl.cc
+    variance_ff_impl.cc
+    )
 
 set(doa_sources "${doa_sources}" PARENT_SCOPE)
 if(NOT doa_sources)
@@ -65,6 +67,7 @@ include_directories(${CPPUNIT_INCLUDE_DIRS})
 list(APPEND test_doa_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/test_doa.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/qa_doa.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/qa_variance_ff.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/qa_mode_ii.cc
     )
 

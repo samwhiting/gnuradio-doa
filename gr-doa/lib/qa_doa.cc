@@ -27,12 +27,14 @@
 
 #include "qa_doa.h"
 #include "qa_mode_ii.h"
+#include "qa_variance_ff.h"
 
 CppUnit::TestSuite *
 qa_doa::suite()
 {
   CppUnit::TestSuite *s = new CppUnit::TestSuite("doa");
   s->addTest(gr::doa::qa_mode_ii::suite());
+  s->addTest(gr::doa::qa_variance_ff::suite());
 
   return s;
 }
