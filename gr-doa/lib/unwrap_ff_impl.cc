@@ -63,7 +63,7 @@ namespace gr {
         out[0] = in[0];
         for (int i=1; i<d_vector_size; ++i) {
             difference = in[i-1]-in[i];
-            if (abs(difference) > threshold) {
+            if (fabs(difference) > threshold) {
                 if (difference > 0) {
                     level++;
                 } else {
