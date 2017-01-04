@@ -16,6 +16,8 @@
 #include "doa/peak_estimator_cff.h"
 #include "doa/cub_delay_cc.h"
 #include "doa/cumulative_ff.h"
+#include "doa/variance_ff.h"
+#include "doa/zero_pad_cc.h"
 %}
 
 
@@ -39,3 +41,8 @@ GR_SWIG_BLOCK_MAGIC2(doa, cub_delay_cc);
 
 %include "doa/cumulative_ff.h"
 GR_SWIG_BLOCK_MAGIC2(doa, cumulative_ff);
+%include "doa/variance_ff.h"
+GR_SWIG_BLOCK_MAGIC2(doa, variance_ff);
+
+%include "doa/zero_pad_cc.h"
+GR_SWIG_BLOCK_MAGIC2(doa, zero_pad_cc);
