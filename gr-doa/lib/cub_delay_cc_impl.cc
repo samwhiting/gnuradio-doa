@@ -110,9 +110,10 @@ namespace gr {
           points.push_back(gr_complex(0,0));
       }
 
+      memcpy(ref_out, ref_in, sizeof(gr_complex)*noutput_items);
+
       for (int i=0; i<noutput_items; ++i) {
           buffer.push(in[i]);
-          ref_out[i] = ref_in[i];
           if (curr_offset > 1) {
               curr_offset--;
           } else {
