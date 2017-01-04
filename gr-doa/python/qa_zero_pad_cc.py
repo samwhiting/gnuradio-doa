@@ -51,10 +51,6 @@ class qa_zero_pad_cc (gr_unittest.TestCase):
         self.results = self.snk.data()
         self.assertComplexTuplesAlmostEqual(self.expected,self.results,3)
 
-       # set up fg
-        self.tb.run ()
-        # check data
-
 
 if __name__ == '__main__':
     gr_unittest.run(qa_zero_pad_cc, "qa_zero_pad_cc.xml")

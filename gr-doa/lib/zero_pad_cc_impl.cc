@@ -63,9 +63,12 @@ namespace gr {
 
       // Do <+signal processing+>
       for (int i=0; i<noutput_items; ++i) {
+
+          //memset(out,0,sizeof(gr_complex)*d_vec_len_out);
           memcpy(out,in,sizeof(gr_complex)*d_vec_len_in);
           memset(out+d_vec_len_in,0,sizeof(gr_complex)*(d_vec_len_out-d_vec_len_in));
           in += d_vec_len_in;
+          out += d_vec_len_out;
       }
 
       // Tell runtime system how many output items we produced.
