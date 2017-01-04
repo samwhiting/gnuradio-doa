@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.10'?>
+<?grc format='1' created='3.7.9'?>
 <flow_graph>
   <timestamp>Sat Dec 17 10:29:54 2016</timestamp>
   <block>
@@ -82,6 +82,33 @@
     </param>
   </block>
   <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(152, 109)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>vector_length_out</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>2*vector_length_in-1</value>
+    </param>
+  </block>
+  <block>
     <key>blocks_multiply_conjugate_cc</key>
     <param>
       <key>alias</key>
@@ -101,7 +128,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(656, 208)</value>
+      <value>(752, 209)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -121,7 +148,7 @@
     </param>
     <param>
       <key>vlen</key>
-      <value>xcorr_width</value>
+      <value>vector_length_out</value>
     </param>
   </block>
   <block>
@@ -144,7 +171,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(224, 196)</value>
+      <value>(160, 196)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -168,7 +195,7 @@
     </param>
     <param>
       <key>num_items</key>
-      <value>xcorr_width</value>
+      <value>vector_length_in</value>
     </param>
     <param>
       <key>vlen</key>
@@ -195,7 +222,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(224, 252)</value>
+      <value>(160, 252)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -219,11 +246,105 @@
     </param>
     <param>
       <key>num_items</key>
-      <value>xcorr_width</value>
+      <value>vector_length_in</value>
     </param>
     <param>
       <key>vlen</key>
       <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>doa_zero_pad_cc</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(336, 165)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>doa_zero_pad_cc_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>vec_len_in</key>
+      <value>vector_length_in</value>
+    </param>
+    <param>
+      <key>vec_len_out</key>
+      <value>vector_length_out</value>
+    </param>
+  </block>
+  <block>
+    <key>doa_zero_pad_cc</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(336, 245)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>doa_zero_pad_cc_0_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>vec_len_in</key>
+      <value>vector_length_in</value>
+    </param>
+    <param>
+      <key>vec_len_out</key>
+      <value>vector_length_out</value>
     </param>
   </block>
   <block>
@@ -246,7 +367,7 @@
     </param>
     <param>
       <key>fft_size</key>
-      <value>xcorr_width</value>
+      <value>vector_length_out</value>
     </param>
     <param>
       <key>forward</key>
@@ -254,7 +375,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(424, 144)</value>
+      <value>(536, 144)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -309,7 +430,7 @@
     </param>
     <param>
       <key>fft_size</key>
-      <value>xcorr_width</value>
+      <value>vector_length_out</value>
     </param>
     <param>
       <key>forward</key>
@@ -317,7 +438,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(424, 248)</value>
+      <value>(536, 248)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -372,7 +493,7 @@
     </param>
     <param>
       <key>fft_size</key>
-      <value>xcorr_width</value>
+      <value>vector_length_out</value>
     </param>
     <param>
       <key>forward</key>
@@ -380,7 +501,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(848, 192)</value>
+      <value>(928, 192)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -427,7 +548,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1064, 212)</value>
+      <value>(1144, 213)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -455,7 +576,7 @@
     </param>
     <param>
       <key>vlen</key>
-      <value>xcorr_width</value>
+      <value>vector_length_out</value>
     </param>
   </block>
   <block>
@@ -470,7 +591,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(64, 196)</value>
+      <value>(24, 196)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -513,7 +634,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(64, 252)</value>
+      <value>(24, 252)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -560,7 +681,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 88)</value>
+      <value>(8, 87)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -568,11 +689,11 @@
     </param>
     <param>
       <key>id</key>
-      <value>xcorr_width</value>
+      <value>vector_length_in</value>
     </param>
     <param>
       <key>label</key>
-      <value>Width</value>
+      <value>Vector Length In</value>
     </param>
     <param>
       <key>short_id</key>
@@ -595,12 +716,24 @@
   </connection>
   <connection>
     <source_block_id>blocks_stream_to_vector_1</source_block_id>
-    <sink_block_id>fft_vxx_0</sink_block_id>
+    <sink_block_id>doa_zero_pad_cc_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_stream_to_vector_1_0</source_block_id>
+    <sink_block_id>doa_zero_pad_cc_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>doa_zero_pad_cc_0</source_block_id>
+    <sink_block_id>fft_vxx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>doa_zero_pad_cc_0_0</source_block_id>
     <sink_block_id>fft_vxx_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
