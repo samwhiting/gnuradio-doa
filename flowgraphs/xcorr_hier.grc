@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.9'?>
+<?grc format='1' created='3.7.10'?>
 <flow_graph>
   <timestamp>Sat Dec 17 10:29:54 2016</timestamp>
   <block>
@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>cross_correlation</value>
+      <value>xcorr_hier</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -78,34 +78,7 @@
     </param>
     <param>
       <key>title</key>
-      <value></value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(152, 109)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>vector_length_out</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>2*vector_length_in-1</value>
+      <value>Cross Correlation</value>
     </param>
   </block>
   <block>
@@ -148,7 +121,7 @@
     </param>
     <param>
       <key>vlen</key>
-      <value>vector_length_out</value>
+      <value>xcorr_width</value>
     </param>
   </block>
   <block>
@@ -195,7 +168,7 @@
     </param>
     <param>
       <key>num_items</key>
-      <value>vector_length_in</value>
+      <value>xcorr_width/2</value>
     </param>
     <param>
       <key>vlen</key>
@@ -246,7 +219,7 @@
     </param>
     <param>
       <key>num_items</key>
-      <value>vector_length_in</value>
+      <value>xcorr_width/2</value>
     </param>
     <param>
       <key>vlen</key>
@@ -293,11 +266,11 @@
     </param>
     <param>
       <key>vec_len_in</key>
-      <value>vector_length_in</value>
+      <value>xcorr_width/2</value>
     </param>
     <param>
       <key>vec_len_out</key>
-      <value>vector_length_out</value>
+      <value>xcorr_width</value>
     </param>
   </block>
   <block>
@@ -340,11 +313,11 @@
     </param>
     <param>
       <key>vec_len_in</key>
-      <value>vector_length_in</value>
+      <value>xcorr_width/2</value>
     </param>
     <param>
       <key>vec_len_out</key>
-      <value>vector_length_out</value>
+      <value>xcorr_width</value>
     </param>
   </block>
   <block>
@@ -367,7 +340,7 @@
     </param>
     <param>
       <key>fft_size</key>
-      <value>vector_length_out</value>
+      <value>xcorr_width</value>
     </param>
     <param>
       <key>forward</key>
@@ -430,7 +403,7 @@
     </param>
     <param>
       <key>fft_size</key>
-      <value>vector_length_out</value>
+      <value>xcorr_width</value>
     </param>
     <param>
       <key>forward</key>
@@ -493,7 +466,7 @@
     </param>
     <param>
       <key>fft_size</key>
-      <value>vector_length_out</value>
+      <value>xcorr_width</value>
     </param>
     <param>
       <key>forward</key>
@@ -576,7 +549,7 @@
     </param>
     <param>
       <key>vlen</key>
-      <value>vector_length_out</value>
+      <value>xcorr_width</value>
     </param>
   </block>
   <block>
@@ -689,11 +662,11 @@
     </param>
     <param>
       <key>id</key>
-      <value>vector_length_in</value>
+      <value>xcorr_width</value>
     </param>
     <param>
       <key>label</key>
-      <value>Vector Length In</value>
+      <value>Width</value>
     </param>
     <param>
       <key>short_id</key>
@@ -705,7 +678,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>8192</value>
+      <value>2**14</value>
     </param>
   </block>
   <connection>
