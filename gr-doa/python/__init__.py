@@ -32,6 +32,7 @@ except ImportError:
 
 # import any pure python here
 from timestamp_ccf import timestamp_ccf
+from correlate_once_ccf import correlate_once_ccf
 
 
 

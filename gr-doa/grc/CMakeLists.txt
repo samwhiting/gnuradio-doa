@@ -27,5 +27,6 @@ install(FILES
     doa_cub_delay_cc.xml
     doa_cumulative_ff.xml
     doa_variance_ff.xml
-    doa_zero_pad_cc.xml DESTINATION share/gnuradio/grc/blocks
+    doa_zero_pad_cc.xml
+    doa_correlate_once_ccf.xml DESTINATION share/gnuradio/grc/blocks
 )
