@@ -34,7 +34,8 @@ list(APPEND doa_sources
     cub_delay_cc_impl.cc
     cumulative_ff_impl.cc
     variance_ff_impl.cc
-    zero_pad_cc_impl.cc )
+    zero_pad_cc_impl.cc
+    sample_offset_ccf_impl.cc )
 
 set(doa_sources "${doa_sources}" PARENT_SCOPE)
 if(NOT doa_sources)

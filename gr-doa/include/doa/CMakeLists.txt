@@ -31,5 +31,6 @@ install(FILES
     cub_delay_cc.h
     cumulative_ff.h
     variance_ff.h
-    zero_pad_cc.h DESTINATION include/doa
+    zero_pad_cc.h
+    sample_offset_ccf.h DESTINATION include/doa
 )

@@ -18,6 +18,7 @@
 #include "doa/cumulative_ff.h"
 #include "doa/variance_ff.h"
 #include "doa/zero_pad_cc.h"
+#include "doa/sample_offset_ccf.h"
 %}
 
 
@@ -46,3 +47,5 @@ GR_SWIG_BLOCK_MAGIC2(doa, variance_ff);
 
 %include "doa/zero_pad_cc.h"
 GR_SWIG_BLOCK_MAGIC2(doa, zero_pad_cc);
+%include "doa/sample_offset_ccf.h"
+GR_SWIG_BLOCK_MAGIC2(doa, sample_offset_ccf);
