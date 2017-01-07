@@ -63,12 +63,14 @@ namespace gr {
         gr_complex x1_avg = accumulate(x1.begin(), x1.end(), gr_complex(0,0)) / gr_complex(d_vector_size,0);
         gr_complex x2_avg = accumulate(x2.begin(), x2.end(), gr_complex(0,0)) / gr_complex(d_vector_size,0);
         // subtract the average value from each element
-        for (unsigned int i=0; i<d_vector_size; ++i) { x1[i] -= x1_avg; }
-        for (unsigned int i=0; i<d_vector_size; ++i) { x2[i] -= x2_avg; }
+        for (int i=0; i<d_vector_size; ++i) { x1[i] -= x1_avg; }
+        for (int i=0; i<d_vector_size; ++i) { x2[i] -= x2_avg; }
         // find conjugates of x1 and x2
         std::vector<gr_complex> x1_c, x2_c;
-        for (unsigned int i=0; i<d_vector_size; ++i) { x1_c.push_back(conj(x1[i])); }
-        for (unsigned int i=0; i<d_vector_size; ++i) { x2_c.push_back(conj(x2[i])); }
+        x1_c.reserve(d_vector_size);
+        x2_c.reserve(d_vector_size);
+        for (int i=0; i<d_vector_size; ++i) { x1_c.push_back(conj(x1[i])); }
+        for (int i=0; i<d_vector_size; ++i) { x2_c.push_back(conj(x2[i])); }
         // multiply vectors together
         std::vector<gr_complex> c11, c12, c22;
         c11.reserve(d_vector_size);
