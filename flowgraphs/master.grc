@@ -369,7 +369,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>100</value>
+      <value>50</value>
     </param>
   </block>
   <block>
@@ -595,7 +595,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>0.16</value>
+      <value>-0.16</value>
     </param>
   </block>
   <block>
@@ -1031,7 +1031,7 @@
     </param>
     <param>
       <key>freq</key>
-      <value>drift*freq_correction_default</value>
+      <value>freq_correction_default*drift</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1082,7 +1082,7 @@
     </param>
     <param>
       <key>const</key>
-      <value>fft_width/8</value>
+      <value>-fft_width/8</value>
     </param>
     <param>
       <key>affinity</key>
@@ -1141,11 +1141,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(216, 772)</value>
+      <value>(456, 620)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
+      <value>180</value>
     </param>
     <param>
       <key>id</key>
@@ -1231,7 +1231,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 364)</value>
+      <value>(408, 364)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1286,7 +1286,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(240, 540)</value>
+      <value>(240, 436)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1413,57 +1413,6 @@
     <param>
       <key>scale</key>
       <value>1</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_keep_one_in_n</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(968, 100)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_keep_one_in_n_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>n</key>
-      <value>4</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
     </param>
     <param>
       <key>vlen</key>
@@ -1804,11 +1753,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(320, 440)</value>
+      <value>(448, 416)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>90</value>
+      <value>0</value>
     </param>
     <param>
       <key>id</key>
@@ -2200,7 +2149,7 @@
     </param>
     <param>
       <key>delay</key>
-      <value>-samp_drift</value>
+      <value>samp_drift</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -2208,7 +2157,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 336)</value>
+      <value>(232, 336)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2255,7 +2204,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1128, 100)</value>
+      <value>(1096, 100)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3704,7 +3653,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(432, 716)</value>
+      <value>(432, 668)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -7310,15 +7259,15 @@
   </connection>
   <connection>
     <source_block_id>blocks_delay_0_0</source_block_id>
-    <sink_block_id>blocks_keep_one_in_n_0_0_0</sink_block_id>
+    <sink_block_id>blocks_multiply_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_delay_0_0_0</source_block_id>
-    <sink_block_id>blocks_multiply_xx_0</sink_block_id>
+    <sink_block_id>doa_cub_delay_cc_0</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>0</sink_key>
+    <sink_key>1</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_delay_0_0_1</source_block_id>
@@ -7329,12 +7278,6 @@
   <connection>
     <source_block_id>blocks_float_to_int_1</source_block_id>
     <sink_block_id>probe3</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_keep_one_in_n_0</source_block_id>
-    <sink_block_id>doa_cumulative_ff_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -7388,9 +7331,9 @@
   </connection>
   <connection>
     <source_block_id>blocks_multiply_xx_0</source_block_id>
-    <sink_block_id>doa_cub_delay_cc_0</sink_block_id>
+    <sink_block_id>blocks_keep_one_in_n_0_0_0</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>1</sink_key>
+    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_stream_to_vector_0</source_block_id>
@@ -7442,19 +7385,19 @@
   </connection>
   <connection>
     <source_block_id>doa_cub_delay_cc_0</source_block_id>
-    <sink_block_id>blocks_keep_one_in_n_0_1</sink_block_id>
-    <source_key>1</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>doa_cub_delay_cc_0</source_block_id>
-    <sink_block_id>xcorr_hier_0</sink_block_id>
-    <source_key>1</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>doa_cub_delay_cc_0</source_block_id>
     <sink_block_id>blocks_delay_0_0</sink_block_id>
+    <source_key>1</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>doa_cub_delay_cc_0</source_block_id>
+    <sink_block_id>xcorr_hier_0</sink_block_id>
+    <source_key>1</source_key>
+    <sink_key>1</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>doa_cub_delay_cc_0</source_block_id>
+    <sink_block_id>blocks_keep_one_in_n_0_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -7462,7 +7405,7 @@
     <source_block_id>doa_cub_delay_cc_0</source_block_id>
     <sink_block_id>xcorr_hier_0</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>1</sink_key>
+    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>doa_cumulative_ff_0</source_block_id>
@@ -7574,13 +7517,13 @@
   </connection>
   <connection>
     <source_block_id>to_radians_per_second_0</source_block_id>
-    <sink_block_id>blocks_keep_one_in_n_0</sink_block_id>
+    <sink_block_id>blocks_moving_average_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>to_radians_per_second_0</source_block_id>
-    <sink_block_id>blocks_moving_average_xx_0</sink_block_id>
+    <sink_block_id>doa_cumulative_ff_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
