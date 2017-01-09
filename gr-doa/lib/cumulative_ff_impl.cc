@@ -62,7 +62,9 @@ namespace gr {
 
       // Add to cumulative sum and return
       for (int i=0; i<noutput_items; ++i) {
-          sum += in[i];
+          if (std::isfinite(in[i])) {
+              sum += in[i];
+          }
           out[i] = sum;
       }
 
