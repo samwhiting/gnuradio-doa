@@ -23,7 +23,7 @@ from gnuradio import gr, gr_unittest
 from gnuradio import blocks
 import doa_swig as doa
 
-class qa_sample_offset_ccf (gr_unittest.TestCase):
+class qa_sample_offset_cci (gr_unittest.TestCase):
 
     def setUp (self):
         self.tb = gr.top_block ()
@@ -42,7 +42,7 @@ class qa_sample_offset_ccf (gr_unittest.TestCase):
         # blocks
         self.src1 = blocks.vector_source_c(self.data1,False,self.width)
         self.src2 = blocks.vector_source_c(self.data2,False,self.width)
-        self.corr = doa.sample_offset_ccf(self.width, self.median)
+        self.corr = doa.sample_offset_cci(self.width, self.median)
         self.snk = blocks.vector_sink_i()
 
         # connections
@@ -67,7 +67,7 @@ class qa_sample_offset_ccf (gr_unittest.TestCase):
         # blocks
         self.src1 = blocks.vector_source_c(self.data1,False,self.width)
         self.src2 = blocks.vector_source_c(self.data2,False,self.width)
-        self.corr = doa.sample_offset_ccf(self.width, self.median)
+        self.corr = doa.sample_offset_cci(self.width, self.median)
         self.snk = blocks.vector_sink_i()
 
         # connections
@@ -92,7 +92,7 @@ class qa_sample_offset_ccf (gr_unittest.TestCase):
         # blocks
         self.src1 = blocks.vector_source_c(self.data1,False,self.width)
         self.src2 = blocks.vector_source_c(self.data2,False,self.width)
-        self.corr = doa.sample_offset_ccf(self.width, self.median)
+        self.corr = doa.sample_offset_cci(self.width, self.median)
         self.snk = blocks.vector_sink_i()
 
         # connections
@@ -107,4 +107,4 @@ class qa_sample_offset_ccf (gr_unittest.TestCase):
 
 
 if __name__ == '__main__':
-    gr_unittest.run(qa_sample_offset_ccf, "qa_sample_offset_ccf.xml")
+    gr_unittest.run(qa_sample_offset_cci, "qa_sample_offset_cci.xml")

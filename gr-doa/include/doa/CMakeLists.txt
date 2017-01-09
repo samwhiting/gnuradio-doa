@@ -32,5 +32,5 @@ install(FILES
     cumulative_ff.h
     variance_ff.h
     zero_pad_cc.h
-    sample_offset_ccf.h DESTINATION include/doa
+    sample_offset_cci.h DESTINATION include/doa
 )

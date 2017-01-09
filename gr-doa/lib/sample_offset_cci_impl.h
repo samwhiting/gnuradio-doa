@@ -18,16 +18,16 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DOA_SAMPLE_OFFSET_CCF_IMPL_H
-#define INCLUDED_DOA_SAMPLE_OFFSET_CCF_IMPL_H
+#ifndef INCLUDED_DOA_SAMPLE_OFFSET_CCI_IMPL_H
+#define INCLUDED_DOA_SAMPLE_OFFSET_CCI_IMPL_H
 
-#include <doa/sample_offset_ccf.h>
+#include <doa/sample_offset_cci.h>
 #include <gnuradio/fft/fft.h>
 
 namespace gr {
   namespace doa {
 
-    class sample_offset_ccf_impl : public sample_offset_ccf
+    class sample_offset_cci_impl : public sample_offset_cci
     {
      private:
       gr::fft::fft_complex* d_fft;
@@ -45,8 +45,8 @@ namespace gr {
       int get_shift(const gr_complex* &in0, const gr_complex* &in1);
 
      public:
-      sample_offset_ccf_impl(int vector_len, int num_xcorr);
-      ~sample_offset_ccf_impl();
+      sample_offset_cci_impl(int vector_len, int num_xcorr);
+      ~sample_offset_cci_impl();
 
       // Where all the action really happens
       int work(int noutput_items,
@@ -57,5 +57,5 @@ namespace gr {
   } // namespace doa
 } // namespace gr
 
-#endif /* INCLUDED_DOA_SAMPLE_OFFSET_CCF_IMPL_H */
+#endif /* INCLUDED_DOA_SAMPLE_OFFSET_CCI_IMPL_H */
 

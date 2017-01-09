@@ -19,8 +19,8 @@
  */
 
 
-#ifndef INCLUDED_DOA_SAMPLE_OFFSET_CCF_H
-#define INCLUDED_DOA_SAMPLE_OFFSET_CCF_H
+#ifndef INCLUDED_DOA_SAMPLE_OFFSET_CCI_H
+#define INCLUDED_DOA_SAMPLE_OFFSET_CCI_H
 
 #include <doa/api.h>
 #include <gnuradio/sync_block.h>
@@ -33,17 +33,17 @@ namespace gr {
      * \ingroup doa
      *
      */
-    class DOA_API sample_offset_ccf : virtual public gr::sync_block
+    class DOA_API sample_offset_cci : virtual public gr::sync_block
     {
      public:
-      typedef boost::shared_ptr<sample_offset_ccf> sptr;
+      typedef boost::shared_ptr<sample_offset_cci> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of doa::sample_offset_ccf.
+       * \brief Return a shared_ptr to a new instance of doa::sample_offset_cci.
        *
-       * To avoid accidental use of raw pointers, doa::sample_offset_ccf's
+       * To avoid accidental use of raw pointers, doa::sample_offset_cci's
        * constructor is in a private implementation
-       * class. doa::sample_offset_ccf::make is the public interface for
+       * class. doa::sample_offset_cci::make is the public interface for
        * creating new instances.
        */
       static sptr make(int vector_len, int num_xcorr);
@@ -52,5 +52,5 @@ namespace gr {
   } // namespace doa
 } // namespace gr
 
-#endif /* INCLUDED_DOA_SAMPLE_OFFSET_CCF_H */
+#endif /* INCLUDED_DOA_SAMPLE_OFFSET_CCI_H */
 

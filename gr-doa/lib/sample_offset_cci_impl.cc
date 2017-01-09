@@ -23,24 +23,24 @@
 #endif
 
 #include <gnuradio/io_signature.h>
-#include "sample_offset_ccf_impl.h"
+#include "sample_offset_cci_impl.h"
 #include <algorithm>
 
 namespace gr {
   namespace doa {
 
-    sample_offset_ccf::sptr
-    sample_offset_ccf::make(int vector_len, int num_xcorr)
+    sample_offset_cci::sptr
+    sample_offset_cci::make(int vector_len, int num_xcorr)
     {
       return gnuradio::get_initial_sptr
-        (new sample_offset_ccf_impl(vector_len, num_xcorr));
+        (new sample_offset_cci_impl(vector_len, num_xcorr));
     }
 
     /*
      * The private constructor
      */
-    sample_offset_ccf_impl::sample_offset_ccf_impl(int vector_len, int num_xcorr)
-      : gr::sync_block("sample_offset_ccf",
+    sample_offset_cci_impl::sample_offset_cci_impl(int vector_len, int num_xcorr)
+      : gr::sync_block("sample_offset_cci",
               gr::io_signature::make(2, 2, sizeof(gr_complex)*vector_len),
               gr::io_signature::make(1, 1, sizeof(int)))
     {
@@ -56,13 +56,13 @@ namespace gr {
         d_ifft = new gr::fft::fft_complex(d_fft_width, false, 1);
 
         message_port_register_in(pmt::mp("recalc"));
-        set_msg_handler(pmt::mp("recalc"), boost::bind(&sample_offset_ccf_impl::recalc_msg, this, _1));
+        set_msg_handler(pmt::mp("recalc"), boost::bind(&sample_offset_cci_impl::recalc_msg, this, _1));
     }
 
     /*
      * Our virtual destructor.
      */
-    sample_offset_ccf_impl::~sample_offset_ccf_impl()
+    sample_offset_cci_impl::~sample_offset_cci_impl()
     {
         delete[] d_results;
         delete[] d_buffer1;
@@ -71,7 +71,7 @@ namespace gr {
         delete d_ifft;
     }
 
-    void sample_offset_ccf_impl::recalc_msg(pmt::pmt_t msg) {
+    void sample_offset_cci_impl::recalc_msg(pmt::pmt_t msg) {
         if (pmt::is_pair(msg)) {
             pmt::pmt_t key = pmt::car(msg);
             pmt::pmt_t val = pmt::cdr(msg);
@@ -92,7 +92,7 @@ namespace gr {
         }
     }
 
-    int sample_offset_ccf_impl::get_shift(const gr_complex* &in0, const gr_complex* &in1) {
+    int sample_offset_cci_impl::get_shift(const gr_complex* &in0, const gr_complex* &in1) {
         // zero pad in0 and take fft
         memcpy(d_fft->get_inbuf(), in0, sizeof(gr_complex)*d_vector_len);
         bzero(d_fft->get_inbuf()+d_vector_len, sizeof(gr_complex)*(d_vector_len-1));
@@ -127,7 +127,7 @@ namespace gr {
     }
 
     int
-    sample_offset_ccf_impl::work(int noutput_items,
+    sample_offset_cci_impl::work(int noutput_items,
         gr_vector_const_void_star &input_items,
         gr_vector_void_star &output_items)
     {

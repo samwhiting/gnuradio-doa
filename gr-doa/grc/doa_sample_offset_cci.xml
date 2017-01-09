@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <block>
   <name>Sample Offset</name>
-  <key>doa_sample_offset_ccf</key>
+  <key>doa_sample_offset_cci</key>
   <category>[doa]</category>
   <import>import doa</import>
-  <make>doa.sample_offset_ccf($vector_len, $num_xcorr)</make>
+  <make>doa.sample_offset_cci($vector_len, $num_xcorr)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name

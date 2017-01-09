@@ -28,5 +28,5 @@ install(FILES
     doa_cumulative_ff.xml
     doa_variance_ff.xml
     doa_zero_pad_cc.xml
-    doa_sample_offset_ccf.xml DESTINATION share/gnuradio/grc/blocks
+    doa_sample_offset_cci.xml DESTINATION share/gnuradio/grc/blocks
 )
