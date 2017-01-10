@@ -43,13 +43,33 @@ namespace gr {
               gr::io_signature::make(1, 1, sizeof(float)),
               gr::io_signature::make(1, 1, sizeof(float))),
         sum(start)
-    {}
+    {
+        message_port_register_in(pmt::mp("reset"));
+        set_msg_handler(pmt::mp("reset"), boost::bind(&cumulative_ff_impl::reset, this, _1));
+    }
 
     /*
      * Our virtual destructor.
      */
     cumulative_ff_impl::~cumulative_ff_impl()
     {
+    }
+
+    void cumulative_ff_impl::reset(pmt::pmt_t msg)
+    {
+        if (pmt::is_pair(msg)) {
+            pmt::pmt_t key = pmt::car(msg);
+            pmt::pmt_t val = pmt::cdr(msg);
+            if (pmt::eq(key, pmt::intern("reset_sum"))) {
+                if (pmt::is_number(val)) {
+                    sum = pmt::to_float(val);
+                }
+            } else {
+                GR_LOG_WARN(d_logger, boost::format("Cumulative Sum Reset message must have the key = 'reset_sum'; got '%1%'.") % pmt::write_string(key));
+            }
+        } else {
+            GR_LOG_WARN(d_logger, "Cumulative Sum Reset message must be a key:value pair where the key is 'reset_sum'.");
+        }
     }
 
     int

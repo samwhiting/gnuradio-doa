@@ -30,6 +30,7 @@ namespace gr {
     {
      private:
       float sum;
+      void reset(pmt::pmt_t msg);
 
      public:
       cumulative_ff_impl(float start);
