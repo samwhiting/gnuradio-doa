@@ -59,7 +59,7 @@ namespace gr {
         if (new_hold != d_hold) {
             gr::thread::scoped_lock l(d_mutex_delay);
             d_hold = new_hold;
-            printf("\nnew hold: %d\n",d_hold);
+            //printf("\nnew hold: %d\n",d_hold);
         }
     }
 
