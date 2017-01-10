@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <block>
-  <name>zero_pad_cc</name>
+  <name>Zero Pad</name>
   <key>doa_zero_pad_cc</key>
   <category>[doa]</category>
   <import>import doa</import>

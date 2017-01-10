@@ -54,3 +54,4 @@ GR_ADD_TEST(qa_cumulative_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa
 GR_ADD_TEST(qa_variance_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_variance_ff.py)
 GR_ADD_TEST(qa_zero_pad_cc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_zero_pad_cc.py)
 GR_ADD_TEST(qa_sample_offset_cci ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_sample_offset_cci.py)
+GR_ADD_TEST(qa_hold_ii ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_hold_ii.py)

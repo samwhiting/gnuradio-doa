@@ -19,6 +19,7 @@
 #include "doa/variance_ff.h"
 #include "doa/zero_pad_cc.h"
 #include "doa/sample_offset_cci.h"
+#include "doa/hold_ii.h"
 %}
 
 
@@ -49,3 +50,5 @@ GR_SWIG_BLOCK_MAGIC2(doa, variance_ff);
 GR_SWIG_BLOCK_MAGIC2(doa, zero_pad_cc);
 %include "doa/sample_offset_cci.h"
 GR_SWIG_BLOCK_MAGIC2(doa, sample_offset_cci);
+%include "doa/hold_ii.h"
+GR_SWIG_BLOCK_MAGIC2(doa, hold_ii);
