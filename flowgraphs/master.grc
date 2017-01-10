@@ -337,7 +337,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1048, 776)</value>
+      <value>(1016, 776)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -376,7 +376,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(896, 780)</value>
+      <value>(864, 780)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -423,7 +423,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>2**12</value>
+      <value>2**11</value>
     </param>
   </block>
   <block>
@@ -675,7 +675,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(536, 668)</value>
+      <value>(168, 668)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -780,7 +780,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(520, 860)</value>
+      <value>(536, 844)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -870,7 +870,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(688, 856)</value>
+      <value>(704, 840)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1256,53 +1256,6 @@
     <param>
       <key>type</key>
       <value>complex</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_float_to_int</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(568, 1076)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_float_to_int_1</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>scale</key>
-      <value>1</value>
     </param>
     <param>
       <key>vlen</key>
@@ -2086,7 +2039,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(904, 732)</value>
+      <value>(880, 732)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2254,7 +2207,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(528, 732)</value>
+      <value>(568, 732)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2278,7 +2231,7 @@
     </param>
   </block>
   <block>
-    <key>doa_peak_estimator_cff</key>
+    <key>doa_peak_estimator_cif</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -2293,11 +2246,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(376, 1080)</value>
+      <value>(384, 1080)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2305,7 +2258,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>doa_peak_estimator_cff_0</value>
+      <value>doa_peak_estimator_cif_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -2489,7 +2442,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(528, 812)</value>
+      <value>(544, 796)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2806,7 +2759,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1080, 736)</value>
+      <value>(1048, 736)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2841,7 +2794,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(704, 1080)</value>
+      <value>(568, 1080)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2876,7 +2829,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(696, 816)</value>
+      <value>(712, 800)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6919,7 +6872,7 @@
     </param>
     <param>
       <key>label2</key>
-      <value>Tab 2</value>
+      <value>Angle filtering</value>
     </param>
     <param>
       <key>label3</key>
@@ -6978,7 +6931,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(736, 732)</value>
+      <value>(728, 732)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -7415,12 +7368,6 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_float_to_int_1</source_block_id>
-    <sink_block_id>probe3</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
     <source_block_id>blocks_keep_one_in_n_0</source_block_id>
     <sink_block_id>blocks_multiply_const_vxx_2</sink_block_id>
     <source_key>0</source_key>
@@ -7571,13 +7518,13 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>doa_peak_estimator_cff_0</source_block_id>
-    <sink_block_id>blocks_float_to_int_1</sink_block_id>
+    <source_block_id>doa_peak_estimator_cif_0</source_block_id>
+    <sink_block_id>probe3</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>doa_peak_estimator_cff_0</source_block_id>
+    <source_block_id>doa_peak_estimator_cif_0</source_block_id>
     <sink_block_id>blocks_multiply_const_vxx_1</sink_block_id>
     <source_key>1</source_key>
     <sink_key>0</sink_key>
@@ -7704,7 +7651,7 @@
   </connection>
   <connection>
     <source_block_id>xcorr_hier_0</source_block_id>
-    <sink_block_id>doa_peak_estimator_cff_0</sink_block_id>
+    <sink_block_id>doa_peak_estimator_cif_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

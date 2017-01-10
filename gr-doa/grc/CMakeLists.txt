@@ -23,7 +23,7 @@ install(FILES
     doa_linearslope_ff.xml
     doa_mode_ii.xml
     doa_lin_delay_cc.xml
-    doa_peak_estimator_cff.xml
+    doa_peak_estimator_cif.xml
     doa_cub_delay_cc.xml
     doa_cumulative_ff.xml
     doa_variance_ff.xml

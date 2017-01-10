@@ -23,42 +23,42 @@
 #endif
 
 #include <gnuradio/io_signature.h>
-#include "peak_estimator_cff_impl.h"
+#include "peak_estimator_cif_impl.h"
 
 namespace gr {
   namespace doa {
 
-    peak_estimator_cff::sptr
-    peak_estimator_cff::make(int vector_len)
+    peak_estimator_cif::sptr
+    peak_estimator_cif::make(int vector_len)
     {
       return gnuradio::get_initial_sptr
-        (new peak_estimator_cff_impl(vector_len));
+        (new peak_estimator_cif_impl(vector_len));
     }
 
     /*
      * The private constructor
      */
-    peak_estimator_cff_impl::peak_estimator_cff_impl(int vector_len)
-      : gr::sync_block("peak_estimator_cff",
+    peak_estimator_cif_impl::peak_estimator_cif_impl(int vector_len)
+      : gr::sync_block("peak_estimator_cif",
               gr::io_signature::make(1, 1, sizeof(gr_complex)*vector_len),
-              gr::io_signature::make(2, 2, sizeof(float))),
+              gr::io_signature::make2(2, 2, sizeof(int), sizeof(float))),
         d_vector_len(vector_len)
     {}
 
     /*
      * Our virtual destructor.
      */
-    peak_estimator_cff_impl::~peak_estimator_cff_impl()
+    peak_estimator_cif_impl::~peak_estimator_cif_impl()
     {
     }
 
-    double peak_estimator_cff_impl::delta(const gr_complex &left, const gr_complex &peak, const gr_complex &right) {
+    double peak_estimator_cif_impl::delta(const gr_complex &left, const gr_complex &peak, const gr_complex &right) {
         gr_complex d = 0;
         d = (right - left) / (peak*2.0f - left - right);
         return -d.real();
     }
 
-    int peak_estimator_cff_impl::peak(const gr_complex* &in) {
+    int peak_estimator_cif_impl::peak(const gr_complex* &in) {
         int value = 0;
         int bin = 0;
         for (int i=0; i<d_vector_len; ++i) {
@@ -71,12 +71,12 @@ namespace gr {
     }
 
     int
-    peak_estimator_cff_impl::work(int noutput_items,
+    peak_estimator_cif_impl::work(int noutput_items,
         gr_vector_const_void_star &input_items,
         gr_vector_void_star &output_items)
     {
       const gr_complex *in = (const gr_complex *) input_items[0];
-      float *bins = (float *) output_items[0];
+      int *bins = (int *) output_items[0];
       float *deltas = (float *) output_items[1];
 
       int peak_bin = 0;

@@ -30,7 +30,7 @@ list(APPEND doa_sources
     linearslope_ff_impl.cc
     mode_ii_impl.cc
     lin_delay_cc_impl.cc
-    peak_estimator_cff_impl.cc
+    peak_estimator_cif_impl.cc
     cub_delay_cc_impl.cc
     cumulative_ff_impl.cc
     variance_ff_impl.cc

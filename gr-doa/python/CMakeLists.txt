@@ -48,7 +48,7 @@ GR_ADD_TEST(qa_unwrap_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_unw
 GR_ADD_TEST(qa_linearslope_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_linearslope_ff.py)
 GR_ADD_TEST(qa_mode_ii ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_mode_ii.py)
 GR_ADD_TEST(qa_lin_delay_cc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_lin_delay_cc.py)
-GR_ADD_TEST(qa_peak_estimator_cff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_peak_estimator_cff.py)
+GR_ADD_TEST(qa_peak_estimator_cif ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_peak_estimator_cif.py)
 GR_ADD_TEST(qa_cub_delay_cc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_cub_delay_cc.py)
 GR_ADD_TEST(qa_cumulative_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_cumulative_ff.py)
 GR_ADD_TEST(qa_variance_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_variance_ff.py)

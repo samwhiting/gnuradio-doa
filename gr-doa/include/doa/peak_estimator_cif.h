@@ -18,33 +18,39 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DOA_PEAK_ESTIMATOR_CFF_IMPL_H
-#define INCLUDED_DOA_PEAK_ESTIMATOR_CFF_IMPL_H
 
-#include <doa/peak_estimator_cff.h>
+#ifndef INCLUDED_DOA_PEAK_ESTIMATOR_CIF_H
+#define INCLUDED_DOA_PEAK_ESTIMATOR_CIF_H
+
+#include <doa/api.h>
+#include <gnuradio/sync_block.h>
 
 namespace gr {
   namespace doa {
 
-    class peak_estimator_cff_impl : public peak_estimator_cff
+    /*!
+     * \brief <+description of block+>
+     * \ingroup doa
+     *
+     */
+    class DOA_API peak_estimator_cif : virtual public gr::sync_block
     {
-     private:
-      int d_vector_len;
-      double delta(const gr_complex &left, const gr_complex &peak, const gr_complex &right);
-      int peak(const gr_complex* &in);
-
      public:
-      peak_estimator_cff_impl(int vector_len);
-      ~peak_estimator_cff_impl();
+      typedef boost::shared_ptr<peak_estimator_cif> sptr;
 
-      // Where all the action really happens
-      int work(int noutput_items,
-         gr_vector_const_void_star &input_items,
-         gr_vector_void_star &output_items);
+      /*!
+       * \brief Return a shared_ptr to a new instance of doa::peak_estimator_cif.
+       *
+       * To avoid accidental use of raw pointers, doa::peak_estimator_cif's
+       * constructor is in a private implementation
+       * class. doa::peak_estimator_cif::make is the public interface for
+       * creating new instances.
+       */
+      static sptr make(int vector_len);
     };
 
   } // namespace doa
 } // namespace gr
 
-#endif /* INCLUDED_DOA_PEAK_ESTIMATOR_CFF_IMPL_H */
+#endif /* INCLUDED_DOA_PEAK_ESTIMATOR_CIF_H */
 

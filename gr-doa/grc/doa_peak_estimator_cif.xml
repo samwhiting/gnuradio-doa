@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <block>
   <name>Peak Estimator</name>
-  <key>doa_peak_estimator_cff</key>
+  <key>doa_peak_estimator_cif</key>
   <category>[doa]</category>
   <import>import doa</import>
-  <make>doa.peak_estimator_cff($vector_len)</make>
+  <make>doa.peak_estimator_cif($vector_len)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
@@ -35,7 +35,7 @@
        * optional (set to 1 for optional inputs) -->
   <source>
     <name>bin</name>
-    <type>float</type>
+    <type>int</type>
   </source>
   <source>
       <name>delta</name>

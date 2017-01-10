@@ -23,7 +23,7 @@ from gnuradio import gr, gr_unittest
 from gnuradio import blocks
 import doa_swig as doa
 
-class qa_peak_estimator_cff (gr_unittest.TestCase):
+class qa_peak_estimator_cif (gr_unittest.TestCase):
 
     def setUp (self):
         self.tb = gr.top_block ()
@@ -40,7 +40,7 @@ class qa_peak_estimator_cff (gr_unittest.TestCase):
 
         # blocks
         self.src = blocks.vector_source_c(self.data,False,self.vector_length)
-        self.peak = doa.peak_estimator_cff(self.vector_length)
+        self.peak = doa.peak_estimator_cif(self.vector_length)
         self.snk1 = blocks.vector_sink_f()
         self.snk2 = blocks.vector_sink_f()
 
@@ -66,7 +66,7 @@ class qa_peak_estimator_cff (gr_unittest.TestCase):
 
         # blocks
         self.src = blocks.vector_source_c(self.data,False,self.vector_length)
-        self.peak = doa.peak_estimator_cff(self.vector_length)
+        self.peak = doa.peak_estimator_cif(self.vector_length)
         self.snk1 = blocks.vector_sink_f()
         self.snk2 = blocks.vector_sink_f()
 
@@ -84,4 +84,4 @@ class qa_peak_estimator_cff (gr_unittest.TestCase):
 
 
 if __name__ == '__main__':
-    gr_unittest.run(qa_peak_estimator_cff, "qa_peak_estimator_cff.xml")
+    gr_unittest.run(qa_peak_estimator_cif, "qa_peak_estimator_cif.xml")

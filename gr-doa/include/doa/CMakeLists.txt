@@ -27,7 +27,7 @@ install(FILES
     linearslope_ff.h
     mode_ii.h
     lin_delay_cc.h
-    peak_estimator_cff.h
+    peak_estimator_cif.h
     cub_delay_cc.h
     cumulative_ff.h
     variance_ff.h
