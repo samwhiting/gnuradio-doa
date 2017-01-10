@@ -37,6 +37,7 @@ namespace gr {
          std::deque<gr_complex> points;
          double offset, curr_offset;
          gr::thread::mutex d_mutex_delay;
+         void reset(pmt::pmt_t msg);
 
      public:
       cub_delay_cc_impl(int samp_rate, float delay);

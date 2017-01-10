@@ -48,6 +48,9 @@ namespace gr {
     {
         set_dly(delay);
         curr_offset=0;
+
+        message_port_register_in(pmt::mp("reset"));
+        set_msg_handler(pmt::mp("reset"), boost::bind(&cub_delay_cc_impl::reset, this, _1));
     }
 
     /*
@@ -76,6 +79,33 @@ namespace gr {
             //printf("\n<><><><><><><><><><><><>\n");
             //printf("new delay: %f\n", new_delay);
             //printf("new offset: %f\n", offset);
+        }
+    }
+
+    void cub_delay_cc_impl::reset(pmt::pmt_t msg) {
+        gr::thread::scoped_lock l(d_mutex_delay);
+        if (pmt::is_symbol(msg)) {
+            if (pmt::eq(msg, pmt::intern("reset_buffer"))) {
+                std::queue<gr_complex> empty;
+                std::swap(buffer, empty);
+                points.clear();
+            } else {
+                GR_LOG_WARN(d_logger, boost::format("Cubic Delay Buffer Reset message must be 'reset_buffer'; got '%1%'.") % pmt::write_string(msg));
+            }
+        } else if (pmt::is_pair(msg)) {
+            pmt::pmt_t key = pmt::car(msg);
+            pmt::pmt_t val = pmt::cdr(msg);
+            if (pmt::eq(key, pmt::intern("reset_buffer"))) {
+                if (pmt::is_integer(val)) {
+                    std::queue<gr_complex> empty;
+                    std::swap(buffer, empty);
+                    points.clear();
+                }
+            } else {
+                GR_LOG_WARN(d_logger, boost::format("Cubic Delay Buffer Reset message must have the key = 'reset_buffer'; got '%1%'.") % pmt::write_string(key));
+            }
+        } else {
+            GR_LOG_WARN(d_logger, "Cubic Delay Buffer Reset message must be either a string or a key:value pair where the key is 'reset_buffer'.");
         }
     }
 

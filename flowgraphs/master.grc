@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>feedback_test</value>
+      <value>master</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -120,7 +120,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(176, 12)</value>
+      <value>(848, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -147,7 +147,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(704, 124)</value>
+      <value>(456, 124)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -244,7 +244,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(608, 1244)</value>
+      <value>(624, 1228)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -411,7 +411,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(200, 1020)</value>
+      <value>(200, 1052)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -438,7 +438,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(208, 500)</value>
+      <value>(520, 476)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -477,7 +477,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(808, 1032)</value>
+      <value>(536, 1024)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -485,7 +485,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>lag2</value>
+      <value>lag</value>
     </param>
     <param>
       <key>value</key>
@@ -504,7 +504,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>lag2</value>
+      <value>lag</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -516,7 +516,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(944, 1044)</value>
+      <value>(368, 1028)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -578,7 +578,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(280, 12)</value>
+      <value>(952, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -605,7 +605,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(696, 12)</value>
+      <value>(448, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -644,7 +644,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1152, 1016)</value>
+      <value>(1104, 1080)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -737,7 +737,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1152, 1148)</value>
+      <value>(1240, 1092)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -784,7 +784,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>tab@0:4,0,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -827,7 +827,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>tab@0:0,1,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -917,7 +917,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(384, 480)</value>
+      <value>(304, 488)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1023,7 +1023,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1272, 1240)</value>
+      <value>(1288, 1240)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1074,7 +1074,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(176, 1156)</value>
+      <value>(176, 1188)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1113,7 +1113,7 @@
     </param>
     <param>
       <key>delay</key>
-      <value>lag2</value>
+      <value>lag</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -1282,7 +1282,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(776, 1132)</value>
+      <value>(792, 1116)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1439,7 +1439,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(792, 1380)</value>
+      <value>(808, 1364)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1490,7 +1490,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(608, 1196)</value>
+      <value>(624, 1180)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1541,7 +1541,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(920, 1132)</value>
+      <value>(936, 1116)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1639,7 +1639,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(792, 1196)</value>
+      <value>(808, 1180)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1992,7 +1992,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(288, 344)</value>
+      <value>(304, 328)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2014,6 +2014,10 @@
       <key>samp_rate</key>
       <value>rtl_samp_rate</value>
     </param>
+    <param>
+      <key>showports</key>
+      <value>False</value>
+    </param>
   </block>
   <block>
     <key>doa_cumulative_ff</key>
@@ -2039,7 +2043,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(880, 732)</value>
+      <value>(888, 732)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2057,6 +2061,10 @@
       <key>minoutbuf</key>
       <value>0</value>
     </param>
+    <param>
+      <key>showports</key>
+      <value>True</value>
+    </param>
   </block>
   <block>
     <key>doa_cumulative_ff</key>
@@ -2082,7 +2090,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1088, 1276)</value>
+      <value>(1104, 1280)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2100,6 +2108,10 @@
       <key>minoutbuf</key>
       <value>0</value>
     </param>
+    <param>
+      <key>showports</key>
+      <value>False</value>
+    </param>
   </block>
   <block>
     <key>doa_cumulative_ff</key>
@@ -2125,7 +2137,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1088, 1228)</value>
+      <value>(1104, 1212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2142,6 +2154,10 @@
     <param>
       <key>minoutbuf</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>showports</key>
+      <value>False</value>
     </param>
   </block>
   <block>
@@ -2164,7 +2180,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(792, 1324)</value>
+      <value>(808, 1308)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2250,7 +2266,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(384, 1080)</value>
+      <value>(384, 1112)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2316,6 +2332,10 @@
       <value>0</value>
     </param>
     <param>
+      <key>showports</key>
+      <value>False</value>
+    </param>
+    <param>
       <key>vector_len</key>
       <value>big_fft_width</value>
     </param>
@@ -2340,7 +2360,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(792, 1244)</value>
+      <value>(808, 1228)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2662,7 +2682,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 1020)</value>
+      <value>(8, 1052)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2794,7 +2814,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(568, 1080)</value>
+      <value>(568, 1112)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2864,7 +2884,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1152, 1104)</value>
+      <value>(1104, 1168)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2938,7 +2958,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>tab@2</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2979,6 +2999,140 @@
     <param>
       <key>value</key>
       <value>10</value>
+    </param>
+  </block>
+  <block>
+    <key>qtgui_edit_box_msg</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1104, 1352)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value>tab@2</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>180</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>qtgui_edit_box_msg_0_0</value>
+    </param>
+    <param>
+      <key>key</key>
+      <value>reset_sum</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>Reset Sample Drift Correction</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>is_pair</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>is_static</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>qtgui_edit_box_msg</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(48, 432)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value>tab@2</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>qtgui_edit_box_msg_0_1</value>
+    </param>
+    <param>
+      <key>key</key>
+      <value>recalc</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>Reset Alignment Buffer</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>is_pair</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>is_static</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>string</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>reset_buffer</value>
     </param>
   </block>
   <block>
@@ -3380,7 +3534,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(544, 1320)</value>
+      <value>(560, 1304)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -3735,7 +3889,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(392, 1156)</value>
+      <value>(392, 1188)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -5282,7 +5436,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(424, 12)</value>
+      <value>(176, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6689,7 +6843,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(904, 12)</value>
+      <value>(656, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6872,7 +7026,7 @@
     </param>
     <param>
       <key>label2</key>
-      <value>Angle filtering</value>
+      <value>Messages</value>
     </param>
     <param>
       <key>label3</key>
@@ -6904,7 +7058,7 @@
     </param>
     <param>
       <key>num_tabs</key>
-      <value>2</value>
+      <value>3</value>
     </param>
   </block>
   <block>
@@ -6970,7 +7124,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(640, 76)</value>
+      <value>(392, 76)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6997,7 +7151,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(752, 76)</value>
+      <value>(504, 76)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -7024,7 +7178,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(288, 292)</value>
+      <value>(304, 276)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -7051,7 +7205,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(288, 420)</value>
+      <value>(304, 436)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -7213,7 +7367,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 1068)</value>
+      <value>(8, 1100)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -7240,7 +7394,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 1116)</value>
+      <value>(8, 1148)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -7302,7 +7456,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(200, 1080)</value>
+      <value>(200, 1112)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -7576,6 +7730,24 @@
     <sink_block_id>doa_sample_offset_cci_0</sink_block_id>
     <source_key>msg</source_key>
     <sink_key>recalc</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>qtgui_edit_box_msg_0_0</source_block_id>
+    <sink_block_id>doa_cumulative_ff_0_0</sink_block_id>
+    <source_key>msg</source_key>
+    <sink_key>reset</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>qtgui_edit_box_msg_0_0</source_block_id>
+    <sink_block_id>doa_cumulative_ff_0_0_0</sink_block_id>
+    <source_key>msg</source_key>
+    <sink_key>reset</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>qtgui_edit_box_msg_0_1</source_block_id>
+    <sink_block_id>doa_cub_delay_cc_0</sink_block_id>
+    <source_key>msg</source_key>
+    <sink_key>reset</sink_key>
   </connection>
   <connection>
     <source_block_id>rtlsdr_source_0</source_block_id>
