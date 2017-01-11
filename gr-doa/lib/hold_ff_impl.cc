@@ -23,26 +23,26 @@
 #endif
 
 #include <gnuradio/io_signature.h>
-#include "hold_ii_impl.h"
+#include "hold_ff_impl.h"
 #include <algorithm>
 
 namespace gr {
   namespace doa {
 
-    hold_ii::sptr
-    hold_ii::make(bool hold)
+    hold_ff::sptr
+    hold_ff::make(bool hold)
     {
       return gnuradio::get_initial_sptr
-        (new hold_ii_impl(hold));
+        (new hold_ff_impl(hold));
     }
 
     /*
      * The private constructor
      */
-    hold_ii_impl::hold_ii_impl(bool hold)
-      : gr::sync_block("hold_ii",
-              gr::io_signature::make(1, 1, sizeof(int)),
-              gr::io_signature::make(1, 1, sizeof(int)))
+    hold_ff_impl::hold_ff_impl(bool hold)
+      : gr::sync_block("hold_ff",
+              gr::io_signature::make(1, 1, sizeof(float)),
+              gr::io_signature::make(1, 1, sizeof(float)))
     {
         set_hold(hold);
         d_value = 0;
@@ -51,33 +51,32 @@ namespace gr {
     /*
      * Our virtual destructor.
      */
-    hold_ii_impl::~hold_ii_impl()
+    hold_ff_impl::~hold_ff_impl()
     {
     }
 
-    void hold_ii_impl::set_hold(bool new_hold) {
+    void hold_ff_impl::set_hold(bool new_hold) {
         if (new_hold != d_hold) {
             d_hold = new_hold;
             //printf("\nnew hold: %d\n",d_hold);
         }
     }
-
     int
-    hold_ii_impl::work(int noutput_items,
+    hold_ff_impl::work(int noutput_items,
         gr_vector_const_void_star &input_items,
         gr_vector_void_star &output_items)
     {
-      const int *in = (const int *) input_items[0];
-      int *out = (int *) output_items[0];
+      const float *in = (const float *) input_items[0];
+      float *out = (float *) output_items[0];
 
       if(!d_hold){
-        //pass every sample through, save the last one into d_value
-        memcpy(out,in,sizeof(int)*noutput_items);
-        d_value = in[noutput_items-1];
+          //pass every sample through, save the last one into d_value
+          memcpy(out,in,sizeof(float)*noutput_items);
+          d_value = in[noutput_items-1];
       }
       else{
-        //hold = true, so just return the last given value
-        std::fill(out,out+noutput_items,d_value);
+          //hold = true, so just return the last given value
+          std::fill(out,out+noutput_items,d_value);
       }
 
       // Tell runtime system how many output items we produced.

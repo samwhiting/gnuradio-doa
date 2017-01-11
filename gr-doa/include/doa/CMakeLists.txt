@@ -33,5 +33,6 @@ install(FILES
     variance_ff.h
     zero_pad_cc.h
     sample_offset_cci.h
-    hold_ii.h DESTINATION include/doa
+    hold_ii.h
+    hold_ff.h DESTINATION include/doa
 )
