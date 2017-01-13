@@ -82,6 +82,49 @@
     </param>
   </block>
   <block>
+    <key>variable_function_probe</key>
+    <param>
+      <key>block_id</key>
+      <value>probe1_0</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>function_args</key>
+      <value></value>
+    </param>
+    <param>
+      <key>function_name</key>
+      <value>level</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1192, 528)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>avg_drift</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>poll_rate</key>
+      <value>10</value>
+    </param>
+  </block>
+  <block>
     <key>variable</key>
     <param>
       <key>comment</key>
@@ -133,6 +176,53 @@
     <param>
       <key>value</key>
       <value>299792458</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_qtgui_check_box</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>false</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1072, 16)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>calibrate</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>Enable Calibration</value>
+    </param>
+    <param>
+      <key>true</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>int</value>
     </param>
   </block>
   <block>
@@ -337,7 +427,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1016, 776)</value>
+      <value>(1192, 824)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -376,7 +466,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(864, 780)</value>
+      <value>(1040, 828)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -393,6 +483,49 @@
     <param>
       <key>label</key>
       <value>Angle Drift (rad/s)</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>real</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_qtgui_label</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>avg_drift</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>formatter</key>
+      <value>None</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1032, 516)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value>tab@0:2,1,1,1</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>drift_correction_0</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>Avg. Angle Drift (rad/s)</value>
     </param>
     <param>
       <key>type</key>
@@ -423,7 +556,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>2**11</value>
+      <value>2**13</value>
     </param>
   </block>
   <block>
@@ -477,7 +610,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(536, 1024)</value>
+      <value>(584, 1024)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -516,7 +649,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(368, 1028)</value>
+      <value>(416, 1028)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -780,7 +913,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(536, 844)</value>
+      <value>(536, 884)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -870,7 +1003,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(704, 840)</value>
+      <value>(704, 880)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -913,7 +1046,7 @@
     </param>
     <param>
       <key>freq</key>
-      <value>freq_correction_default*drift</value>
+      <value>(calibrate)*(freq_correction_default*drift) + (not calibrate)*(freq_correction_default*avg_drift)</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1032,6 +1165,57 @@
     <param>
       <key>id</key>
       <value>blocks_add_xx_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_inputs</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_add_xx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1120, 744)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_add_xx_0_0</value>
     </param>
     <param>
       <key>type</key>
@@ -1416,6 +1600,112 @@
     </param>
   </block>
   <block>
+    <key>blocks_keep_one_in_n</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(664, 780)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_keep_one_in_n_1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>n</key>
+      <value>slope_samples</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_moving_average_xx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1048, 596)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_moving_average_xx_0</value>
+    </param>
+    <param>
+      <key>length</key>
+      <value>25</value>
+    </param>
+    <param>
+      <key>max_iter</key>
+      <value>4000</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>scale</key>
+      <value>1/25.0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+  </block>
+  <block>
     <key>blocks_multiply_const_vxx</key>
     <param>
       <key>alias</key>
@@ -1427,7 +1717,7 @@
     </param>
     <param>
       <key>const</key>
-      <value>rtl_samp_rate/float(fft_width)</value>
+      <value>rtl_samp_rate/float(fft_width)*calibrate</value>
     </param>
     <param>
       <key>affinity</key>
@@ -1529,7 +1819,7 @@
     </param>
     <param>
       <key>const</key>
-      <value>0.1</value>
+      <value>0.1*calibrate</value>
     </param>
     <param>
       <key>affinity</key>
@@ -2043,7 +2333,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(888, 732)</value>
+      <value>(936, 732)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2161,6 +2451,139 @@
     </param>
   </block>
   <block>
+    <key>doa_cumulative_ff</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>start</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(936, 780)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>doa_cumulative_ff_0_1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>showports</key>
+      <value>True</value>
+    </param>
+  </block>
+  <block>
+    <key>doa_hold_ff</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1224, 660)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>hold</key>
+      <value>not calibrate</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>doa_hold_ff_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>doa_hold_ii</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(576, 1108)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>hold</key>
+      <value>not calibrate</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>doa_hold_ii_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
     <key>doa_linearslope_ff</key>
     <param>
       <key>alias</key>
@@ -2223,7 +2646,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(568, 732)</value>
+      <value>(608, 732)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2462,7 +2885,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(544, 796)</value>
+      <value>(544, 836)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2779,7 +3202,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1048, 736)</value>
+      <value>(1216, 760)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2814,7 +3237,42 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(568, 1112)</value>
+      <value>(1192, 616)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>180</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>probe1_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_probe_signal_x</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(848, 1064)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2849,7 +3307,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(712, 800)</value>
+      <value>(712, 840)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2919,7 +3377,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(720, 1552)</value>
+      <value>(728, 1552)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -7073,7 +7531,7 @@
     </param>
     <param>
       <key>const</key>
-      <value>rtl_samp_rate/float(n_points)</value>
+      <value>rtl_samp_rate/float(n_points)*calibrate</value>
     </param>
     <param>
       <key>affinity</key>
@@ -7085,7 +7543,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(728, 732)</value>
+      <value>(792, 732)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -7094,6 +7552,57 @@
     <param>
       <key>id</key>
       <value>to_radians_per_second_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_multiply_const_vxx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>const</key>
+      <value>0.1*calibrate</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(792, 780)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>to_radians_per_second_0_0</value>
     </param>
     <param>
       <key>type</key>
@@ -7437,6 +7946,33 @@
     </param>
   </block>
   <block>
+    <key>virtual_source</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(520, 780)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_source_2_0</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>capon</value>
+    </param>
+  </block>
+  <block>
     <key>xcorr_hier</key>
     <param>
       <key>alias</key>
@@ -7498,6 +8034,18 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>blocks_add_xx_0_0</source_block_id>
+    <sink_block_id>blocks_moving_average_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_add_xx_0_0</source_block_id>
+    <sink_block_id>probe1</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>blocks_complex_to_mag_squared_0</source_block_id>
     <sink_block_id>qtgui_vector_sink_f_0</sink_block_id>
     <source_key>0</source_key>
@@ -7536,6 +8084,18 @@
   <connection>
     <source_block_id>blocks_keep_one_in_n_0_1</source_block_id>
     <sink_block_id>blocks_stream_to_vector_0_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_keep_one_in_n_1</source_block_id>
+    <sink_block_id>to_radians_per_second_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_moving_average_xx_0</source_block_id>
+    <sink_block_id>doa_hold_ff_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -7643,7 +8203,7 @@
   </connection>
   <connection>
     <source_block_id>doa_cumulative_ff_0</source_block_id>
-    <sink_block_id>probe1</sink_block_id>
+    <sink_block_id>blocks_add_xx_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -7656,6 +8216,24 @@
   <connection>
     <source_block_id>doa_cumulative_ff_0_0_0</source_block_id>
     <sink_block_id>blocks_add_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>doa_cumulative_ff_0_1</source_block_id>
+    <sink_block_id>blocks_add_xx_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>1</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>doa_hold_ff_0</source_block_id>
+    <sink_block_id>probe1_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>doa_hold_ii_0</source_block_id>
+    <sink_block_id>probe3</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -7673,7 +8251,7 @@
   </connection>
   <connection>
     <source_block_id>doa_peak_estimator_cif_0</source_block_id>
-    <sink_block_id>probe3</sink_block_id>
+    <sink_block_id>doa_hold_ii_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -7768,6 +8346,12 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>to_radians_per_second_0_0</source_block_id>
+    <sink_block_id>doa_cumulative_ff_0_1</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>virtual_source_0</source_block_id>
     <sink_block_id>blocks_stream_to_vector_1_0</sink_block_id>
     <source_key>0</source_key>
@@ -7812,6 +8396,12 @@
   <connection>
     <source_block_id>virtual_source_2</source_block_id>
     <sink_block_id>qtgui_time_sink_x_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>virtual_source_2_0</source_block_id>
+    <sink_block_id>blocks_keep_one_in_n_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
