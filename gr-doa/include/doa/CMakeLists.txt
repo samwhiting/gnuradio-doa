@@ -34,5 +34,6 @@ install(FILES
     zero_pad_cc.h
     sample_offset_cci.h
     hold_ii.h
-    hold_ff.h DESTINATION include/doa
+    hold_ff.h
+    full_capon_ccf.h DESTINATION include/doa
 )

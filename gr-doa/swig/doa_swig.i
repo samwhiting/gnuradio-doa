@@ -21,6 +21,7 @@
 #include "doa/sample_offset_cci.h"
 #include "doa/hold_ii.h"
 #include "doa/hold_ff.h"
+#include "doa/full_capon_ccf.h"
 %}
 
 
@@ -55,3 +56,5 @@ GR_SWIG_BLOCK_MAGIC2(doa, sample_offset_cci);
 GR_SWIG_BLOCK_MAGIC2(doa, hold_ii);
 %include "doa/hold_ff.h"
 GR_SWIG_BLOCK_MAGIC2(doa, hold_ff);
+%include "doa/full_capon_ccf.h"
+GR_SWIG_BLOCK_MAGIC2(doa, full_capon_ccf);

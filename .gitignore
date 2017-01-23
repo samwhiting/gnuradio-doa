@@ -1,2 +1,3 @@
 gr-doa/build/
 flowgraphs/*.py
+gr-doa/python/*.pyc
