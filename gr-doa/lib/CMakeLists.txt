@@ -71,9 +71,6 @@ include_directories(${CPPUNIT_INCLUDE_DIRS})
 list(APPEND test_doa_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/test_doa.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/qa_doa.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/qa_zero_pad_cc.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/qa_variance_ff.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/qa_mode_ii.cc
     )
 
 add_executable(test-doa ${test_doa_sources})
