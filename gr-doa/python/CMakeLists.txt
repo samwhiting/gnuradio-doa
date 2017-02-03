@@ -57,3 +57,4 @@ GR_ADD_TEST(qa_sample_offset_cci ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR
 GR_ADD_TEST(qa_hold_ii ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_hold_ii.py)
 GR_ADD_TEST(qa_hold_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_hold_ff.py)
 GR_ADD_TEST(qa_full_capon_ccf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_full_capon_ccf.py)
+GR_ADD_TEST(qa_full_capon3_ccf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_full_capon3_ccf.py)

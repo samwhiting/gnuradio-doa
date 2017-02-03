@@ -31,5 +31,6 @@ install(FILES
     doa_sample_offset_cci.xml
     doa_hold_ii.xml
     doa_hold_ff.xml
-    doa_full_capon_ccf.xml DESTINATION share/gnuradio/grc/blocks
+    doa_full_capon_ccf.xml
+    doa_full_capon3_ccf.xml DESTINATION share/gnuradio/grc/blocks
 )
