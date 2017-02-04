@@ -95,21 +95,21 @@ namespace gr {
         transform(x2.begin(), x2.end(), x3_c.begin(), back_inserter(r23), std::multiplies<gr_complex>());
         
         // make covariance matrix
-        std::vector<std::vector<gr_complex> > covar(3, std::vector<gr_complex>(3, 0));
-        covar[0][0] = accumulate(r11.begin(), r11.end(), gr_complex(0,0)) / gr_complex(d_vec_in,0);
-        covar[1][1] = accumulate(r22.begin(), r22.end(), gr_complex(0,0)) / gr_complex(d_vec_in,0);
-        covar[2][2] = accumulate(r33.begin(), r33.end(), gr_complex(0,0)) / gr_complex(d_vec_in,0);
+        std::vector<std::vector<gr_complex> > upper(3, std::vector<gr_complex>(3, 0));
+        upper[0][0] = accumulate(r11.begin(), r11.end(), gr_complex(0,0)) / gr_complex(d_vec_in,0);
+        upper[1][1] = accumulate(r22.begin(), r22.end(), gr_complex(0,0)) / gr_complex(d_vec_in,0);
+        upper[2][2] = accumulate(r33.begin(), r33.end(), gr_complex(0,0)) / gr_complex(d_vec_in,0);
 
-        covar[0][1] = accumulate(r12.begin(), r12.end(), gr_complex(0,0)) / gr_complex(d_vec_in,0);
-        covar[0][2] = accumulate(r13.begin(), r13.end(), gr_complex(0,0)) / gr_complex(d_vec_in,0);
-        covar[1][2] = accumulate(r23.begin(), r23.end(), gr_complex(0,0)) / gr_complex(d_vec_in,0);
+        upper[0][1] = accumulate(r12.begin(), r12.end(), gr_complex(0,0)) / gr_complex(d_vec_in,0);
+        upper[0][2] = accumulate(r13.begin(), r13.end(), gr_complex(0,0)) / gr_complex(d_vec_in,0);
+        upper[1][2] = accumulate(r23.begin(), r23.end(), gr_complex(0,0)) / gr_complex(d_vec_in,0);
 
-        covar[1][0] = conj(covar[0][1]);
-        covar[2][0] = conj(covar[0][2]);
-        covar[2][1] = conj(covar[1][2]);
+        upper[1][0] = conj(upper[0][1]);
+        upper[2][0] = conj(upper[0][2]);
+        upper[2][1] = conj(upper[1][2]);
 
         // decompose the matrix into lower and upper components
-        std::vector<std::vector<gr_complex> > upper(3, std::vector<gr_complex>(3, 0));
+        std::vector<std::vector<gr_complex> > permute(3, std::vector<gr_complex>(3, 0));
         std::vector<std::vector<gr_complex> > lower(3, std::vector<gr_complex>(3, 0));
 
         
