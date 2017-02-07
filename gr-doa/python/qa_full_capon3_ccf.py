@@ -32,9 +32,32 @@ class qa_full_capon3_ccf (gr_unittest.TestCase):
         self.tb = None
 
     def test_001_t (self):
-        # set up fg
+        # data
+        self.vector_length_in = 5;
+        self.vector_length_out = 6;
+        self.data1 = ((1.3685 + 2.6736j),(0.3466 + 2.9633j),(-0.5820 + 2.9629j),(-1.3638 + 2.6724j),(-1.9690 + 2.1204j))
+        self.data2 = ((-1.9847 + 2.3153j),(-2.4927 + 1.6124j),(-2.9269 + 0.7517j),(-2.8827 - 0.1825j),(-2.9004 - 1.0989j))
+        self.data3 = ((-2.9847 + 3.3153j),(-3.4927 + 2.6124j),(-3.9269 + 2.7517j),(-1.8827 - 2.1825j),(-3.9004 - 3.0989j))
+        self.expected = (0.0060,0.0043,0.0054,0.0145,0.8080,0.0201)
+
+        # blocks
+        self.src1 = blocks.vector_source_c(self.data1,False,self.vector_length_in)
+        self.src2 = blocks.vector_source_c(self.data2,False,self.vector_length_in)
+        self.src3 = blocks.vector_source_c(self.data3,False,self.vector_length_in)
+        self.capon = doa.full_capon3_ccf(self.vector_length_in,self.vector_length_out)
+        self.snk = blocks.vector_sink_f(self.vector_length_out)
+
+        # connections
+        self.tb.connect(self.src1, (self.capon,0))
+        self.tb.connect(self.src2, (self.capon,1))
+        self.tb.connect(self.src3, (self.capon,2))
+        self.tb.connect(self.capon,self.snk)
         self.tb.run ()
+
         # check data
+        self.results = self.snk.data()
+        self.assertFloatTuplesAlmostEqual(self.expected,self.results,4)
+
 
 
 if __name__ == '__main__':

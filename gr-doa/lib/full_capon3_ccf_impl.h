@@ -34,6 +34,10 @@ namespace gr {
        int d_vec_out;
 
        void capon(const gr_complex* in0, const gr_complex* in1,const gr_complex* in2, float* out);
+       void luDecomp(std::vector<std::vector<gr_complex> >& original,std::vector<std::vector<gr_complex> >& lower,std::vector<std::vector<gr_complex> >& upper);
+       void invert_lower(std::vector<std::vector<gr_complex> >& original,std::vector<std::vector<gr_complex> >& inverse);
+       void invert_upper(std::vector<std::vector<gr_complex> >& original,std::vector<std::vector<gr_complex> >& inverse);
+       void printMatrix(std::vector<std::vector<gr_complex> > a);
 
      public:
       full_capon3_ccf_impl(int vec_in, int vec_out);
