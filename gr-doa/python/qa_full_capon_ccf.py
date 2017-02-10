@@ -53,8 +53,11 @@ class qa_full_capon_ccf (gr_unittest.TestCase):
 
         # check data
         self.results = self.snk.data()
-        print "we got out: ", self.results
-        self.assertFloatTuplesAlmostEqual(self.expected,self.results,4)
+        print "***********************"
+        print "we got back: ",["%5.3f" % i for i in self.results]
+        print "we expected: ",["%5.3f" % i for i in self.expected]
+        print "***********************"
+        self.assertFloatTuplesAlmostEqual(self.expected,self.results,0)
 
 
 if __name__ == '__main__':

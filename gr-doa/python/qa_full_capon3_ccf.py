@@ -33,12 +33,13 @@ class qa_full_capon3_ccf (gr_unittest.TestCase):
 
     def test_001_t (self):
         # data
-        self.vector_length_in = 5;
-        self.vector_length_out = 6;
-        self.data1 = ((1.3685 + 2.6736j),(0.3466 + 2.9633j),(-0.5820 + 2.9629j),(-1.3638 + 2.6724j),(-1.9690 + 2.1204j))
-        self.data2 = ((-1.9847 + 2.3153j),(-2.4927 + 1.6124j),(-2.9269 + 0.7517j),(-2.8827 - 0.1825j),(-2.9004 - 1.0989j))
-        self.data3 = ((-2.9847 + 3.3153j),(-3.4927 + 2.6124j),(-3.9269 + 2.7517j),(-1.8827 - 2.1825j),(-3.9004 - 3.0989j))
-        self.expected = (0.0060,0.0043,0.0054,0.0145,0.8080,0.0201)
+        self.vector_length_in = 8;
+        self.vector_length_out = 8;
+        self.data1 = ((2.101765 - 0.1136365j),(0.6830077 + 0.1766335j),(4.741745 + 0.07127096j),(1.037089 + 0.08937196j),(2.013856 + 0.08394291j),(4.518792 + 0.5311512j),(1.142077 - 0.1150589j),(-10.51938 - 0.6250837j)) 
+        self.data2 = ((-0.9668710 + 3.410859j),(1.675037 - 0.7679004j),(1.076942 + 4.065166j),(0.9010103 + 0.3478354j),(1.026168 + 0.9570264j),(5.078891 - 0.9142112j),(-1.145686 + 2.144195j),(-6.622580 - 4.368002j))
+        self.data3 = ((-4.652023 + 0.5961858j),(2.492679 - 0.2852718j),(-3.200703 + 0.5038460j),(0.8181259 - 0.04016215j),(-0.06216002 + 0.05145182j),(6.141905 - 0.6604887j),(-3.260490 + 0.4184076j),(-1.788836 + 0.007123172j))
+        self.expected = (0.00694161700084806, 0.00515712471678853, 0.00819214154034853, 0.0390417091548443,  2.37873339653018,  0.159786492586136, 3.01280951509776,  0.0243304856121540) 
+
 
         # blocks
         self.src1 = blocks.vector_source_c(self.data1,False,self.vector_length_in)
@@ -56,7 +57,11 @@ class qa_full_capon3_ccf (gr_unittest.TestCase):
 
         # check data
         self.results = self.snk.data()
-        self.assertFloatTuplesAlmostEqual(self.expected,self.results,4)
+        print "***********************"
+        print "we got back: ",["%5.3f" % i for i in self.results]
+        print "we expected: ",["%5.3f" % i for i in self.expected]
+        print "***********************"
+        self.assertFloatTuplesAlmostEqual(self.expected,self.results,0)
 
 
 

@@ -153,11 +153,22 @@ namespace gr {
         const gr_complex step = 6.28318530718/d_vec_out;
         gr_complex theta = -3.14159265359;
         const gr_complex imag(0, 1);
+        gr_complex exp1,exp2,exp3,exp4;
+        gr_complex block1,block2,block3;
 
-//        for(int i=0; i<d_vec_out; ++i){
-//          out[i] = abs(gr_complex(1)/(inverse[0][0] + (inverse[1][0] + inverse[0][1]) * std::exp(imag*theta) + inverse[1][1] * std::exp(gr_complex(2) * imag * theta)));
-//          theta += step;
-//        }
+        for(int i=0; i<d_vec_out; ++i){
+          exp1 = std::exp(-1.0f*imag*theta);
+          exp2 = std::exp(imag*theta);
+          exp3 = std::exp(-2.0f*imag*theta);
+          exp4 = std::exp(2.0f*imag*theta);
+
+          block1 = inv_upper[0][0]*inv_lower[0][0];
+          block2 = (inv_upper[0][1] + inv_upper[1][1]*exp1) * (inv_lower[1][0] + inv_lower[1][1]*exp2);
+          block3 = (inv_upper[0][2] + inv_upper[1][2]*exp1 + inv_upper[2][2]*exp3)*(inv_lower[2][0] + inv_lower[2][1]*exp2 + inv_lower[2][2]*exp4);
+
+          out[i] = abs(1.0f/(block1+block2+block3)); 
+          theta += step;
+        }
     }
     
 // decompose matrix 'original' into lower and upper matrices. 
