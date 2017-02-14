@@ -39,7 +39,8 @@ list(APPEND doa_sources
     hold_ii_impl.cc
     hold_ff_impl.cc
     full_capon_ccf_impl.cc
-    full_capon3_ccf_impl.cc )
+    full_capon3_ccf_impl.cc
+    multiply_exp_cc_impl.cc )
 
 set(doa_sources "${doa_sources}" PARENT_SCOPE)
 if(NOT doa_sources)
