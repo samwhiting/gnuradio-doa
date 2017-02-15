@@ -36,5 +36,7 @@ install(FILES
     hold_ii.h
     hold_ff.h
     full_capon_ccf.h
-    full_capon3_ccf.h DESTINATION include/doa
+    full_capon3_ccf.h
+    multiply_exp_cc.h
+    pi2pi_ff.h DESTINATION include/doa
 )

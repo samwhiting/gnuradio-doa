@@ -32,5 +32,7 @@ install(FILES
     doa_hold_ii.xml
     doa_hold_ff.xml
     doa_full_capon_ccf.xml
-    doa_full_capon3_ccf.xml DESTINATION share/gnuradio/grc/blocks
+    doa_full_capon3_ccf.xml
+    doa_multiply_exp_cc.xml
+    doa_pi2pi_ff.xml DESTINATION share/gnuradio/grc/blocks
 )

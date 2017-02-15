@@ -18,30 +18,22 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DOA_FULL_CAPON3_CCF_IMPL_H
-#define INCLUDED_DOA_FULL_CAPON3_CCF_IMPL_H
+#ifndef INCLUDED_DOA_PI2PI_FF_IMPL_H
+#define INCLUDED_DOA_PI2PI_FF_IMPL_H
 
-#include <doa/full_capon3_ccf.h>
+#include <doa/pi2pi_ff.h>
 
 namespace gr {
   namespace doa {
 
-    class full_capon3_ccf_impl : public full_capon3_ccf
+    class pi2pi_ff_impl : public pi2pi_ff
     {
      private:
       // Nothing to declare in this block.
-       int d_vec_in;
-       int d_vec_out;
-
-       void capon(const gr_complex* in0, const gr_complex* in1,const gr_complex* in2, float* out);
-       void luDecomp(std::vector<std::vector<gr_complex> >& original,std::vector<std::vector<gr_complex> >& lower,std::vector<std::vector<gr_complex> >& upper);
-       void invert_lower(std::vector<std::vector<gr_complex> >& original,std::vector<std::vector<gr_complex> >& inverse);
-       void invert_upper(std::vector<std::vector<gr_complex> >& original,std::vector<std::vector<gr_complex> >& inverse);
-       void printMatrix(std::vector<std::vector<gr_complex> > a);
 
      public:
-      full_capon3_ccf_impl(int vec_in, int vec_out);
-      ~full_capon3_ccf_impl();
+      pi2pi_ff_impl();
+      ~pi2pi_ff_impl();
 
       // Where all the action really happens
       int work(int noutput_items,
@@ -52,5 +44,5 @@ namespace gr {
   } // namespace doa
 } // namespace gr
 
-#endif /* INCLUDED_DOA_FULL_CAPON3_CCF_IMPL_H */
+#endif /* INCLUDED_DOA_PI2PI_FF_IMPL_H */
 

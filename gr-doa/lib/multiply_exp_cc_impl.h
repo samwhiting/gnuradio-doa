@@ -18,30 +18,24 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DOA_FULL_CAPON3_CCF_IMPL_H
-#define INCLUDED_DOA_FULL_CAPON3_CCF_IMPL_H
+#ifndef INCLUDED_DOA_MULTIPLY_EXP_CC_IMPL_H
+#define INCLUDED_DOA_MULTIPLY_EXP_CC_IMPL_H
 
-#include <doa/full_capon3_ccf.h>
+#include <doa/multiply_exp_cc.h>
 
 namespace gr {
   namespace doa {
 
-    class full_capon3_ccf_impl : public full_capon3_ccf
+    class multiply_exp_cc_impl : public multiply_exp_cc
     {
      private:
-      // Nothing to declare in this block.
-       int d_vec_in;
-       int d_vec_out;
-
-       void capon(const gr_complex* in0, const gr_complex* in1,const gr_complex* in2, float* out);
-       void luDecomp(std::vector<std::vector<gr_complex> >& original,std::vector<std::vector<gr_complex> >& lower,std::vector<std::vector<gr_complex> >& upper);
-       void invert_lower(std::vector<std::vector<gr_complex> >& original,std::vector<std::vector<gr_complex> >& inverse);
-       void invert_upper(std::vector<std::vector<gr_complex> >& original,std::vector<std::vector<gr_complex> >& inverse);
-       void printMatrix(std::vector<std::vector<gr_complex> > a);
+      float d_arg;
 
      public:
-      full_capon3_ccf_impl(int vec_in, int vec_out);
-      ~full_capon3_ccf_impl();
+      multiply_exp_cc_impl(float arg);
+      ~multiply_exp_cc_impl();
+
+      void set_arg(float new_arg);
 
       // Where all the action really happens
       int work(int noutput_items,
@@ -52,5 +46,5 @@ namespace gr {
   } // namespace doa
 } // namespace gr
 
-#endif /* INCLUDED_DOA_FULL_CAPON3_CCF_IMPL_H */
+#endif /* INCLUDED_DOA_MULTIPLY_EXP_CC_IMPL_H */
 

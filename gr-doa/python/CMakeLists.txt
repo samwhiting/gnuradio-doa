@@ -58,3 +58,5 @@ GR_ADD_TEST(qa_hold_ii ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_hold_
 GR_ADD_TEST(qa_hold_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_hold_ff.py)
 GR_ADD_TEST(qa_full_capon_ccf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_full_capon_ccf.py)
 GR_ADD_TEST(qa_full_capon3_ccf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_full_capon3_ccf.py)
+#GR_ADD_TEST(qa_multiply_exp_cc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_multiply_exp_cc.py)
+GR_ADD_TEST(qa_pi2pi_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pi2pi_ff.py)
