@@ -24,6 +24,7 @@
 #include "doa/full_capon_ccf.h"
 #include "doa/full_capon3_ccf.h"
 #include "doa/multiply_exp_cc.h"
+#include "doa/pi2pi_ff.h"
 %}
 
 
@@ -65,3 +66,5 @@ GR_SWIG_BLOCK_MAGIC2(doa, full_capon3_ccf);
 
 %include "doa/multiply_exp_cc.h"
 GR_SWIG_BLOCK_MAGIC2(doa, multiply_exp_cc);
+%include "doa/pi2pi_ff.h"
+GR_SWIG_BLOCK_MAGIC2(doa, pi2pi_ff);
