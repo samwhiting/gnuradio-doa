@@ -62,7 +62,7 @@ namespace gr {
             pmt::pmt_t val = pmt::cdr(msg);
             if (pmt::eq(key, pmt::intern("reset_sum"))) {
                 if (pmt::is_number(val)) {
-                    sum = pmt::to_float(val);
+                    sum = pmt::to_double(val);
                 }
             } else {
                 GR_LOG_WARN(d_logger, boost::format("Cumulative Sum Reset message must have the key = 'reset_sum'; got '%1%'.") % pmt::write_string(key));
