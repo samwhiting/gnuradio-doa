@@ -93,7 +93,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(272, 620)</value>
+      <value>(272, 468)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -109,7 +109,7 @@
     </param>
   </block>
   <block>
-    <key>variable_qtgui_push_button</key>
+    <key>variable_qtgui_check_box</key>
     <param>
       <key>comment</key>
       <value></value>
@@ -123,12 +123,16 @@
       <value>True</value>
     </param>
     <param>
+      <key>false</key>
+      <value>False</value>
+    </param>
+    <param>
       <key>_coordinate</key>
-      <value>(256, 120)</value>
+      <value>(568, 8)</value>
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>0,0,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -140,14 +144,10 @@
     </param>
     <param>
       <key>label</key>
-      <value>Calibrate Broadside</value>
+      <value></value>
     </param>
     <param>
-      <key>pressed</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>released</key>
+      <key>true</key>
       <value>True</value>
     </param>
     <param>
@@ -167,7 +167,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(112, 156)</value>
+      <value>(448, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -179,7 +179,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>467.5625e6</value>
+      <value>(467.5625e6)*(harmonic+1)</value>
     </param>
   </block>
   <block>
@@ -206,7 +206,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(480, 752)</value>
+      <value>(496, 520)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -249,7 +249,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(760, 392)</value>
+      <value>(760, 232)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -280,7 +280,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(600, 284)</value>
+      <value>(600, 124)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -307,7 +307,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(504, 284)</value>
+      <value>(504, 124)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -323,6 +323,53 @@
     </param>
   </block>
   <block>
+    <key>variable_qtgui_check_box</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>false</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(704, 8)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value>0,1,1,1</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>harmonic</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>true</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>bool</value>
+    </param>
+  </block>
+  <block>
     <key>variable</key>
     <param>
       <key>comment</key>
@@ -334,7 +381,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(432, 284)</value>
+      <value>(432, 124)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -361,7 +408,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(296, 556)</value>
+      <value>(296, 396)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -388,7 +435,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 76)</value>
+      <value>(176, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -415,7 +462,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 156)</value>
+      <value>(344, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -431,18 +478,30 @@
     </param>
   </block>
   <block>
-    <key>variable</key>
+    <key>variable_qtgui_label</key>
     <param>
       <key>comment</key>
       <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>center_freq/(1e6)</value>
     </param>
     <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
+      <key>formatter</key>
+      <value>None</value>
+    </param>
+    <param>
       <key>_coordinate</key>
-      <value>(296, 284)</value>
+      <value>(696, 116)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value>0,2,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -450,11 +509,15 @@
     </param>
     <param>
       <key>id</key>
-      <value>slope_samples</value>
+      <value>variable_qtgui_label_0</value>
     </param>
     <param>
-      <key>value</key>
-      <value>50</value>
+      <key>label</key>
+      <value>Frequency</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>real</value>
     </param>
   </block>
   <block>
@@ -481,7 +544,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(296, 508)</value>
+      <value>(296, 348)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -532,7 +595,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 420)</value>
+      <value>(248, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -587,7 +650,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 372)</value>
+      <value>(248, 212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -638,7 +701,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(328, 372)</value>
+      <value>(328, 212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -689,7 +752,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(328, 420)</value>
+      <value>(328, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -740,7 +803,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(440, 420)</value>
+      <value>(440, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -791,7 +854,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(440, 372)</value>
+      <value>(440, 212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -842,7 +905,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(72, 724)</value>
+      <value>(72, 564)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -893,7 +956,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(72, 684)</value>
+      <value>(72, 524)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -944,7 +1007,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(584, 384)</value>
+      <value>(584, 224)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -987,7 +1050,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(536, 548)</value>
+      <value>(536, 388)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1030,7 +1093,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(400, 512)</value>
+      <value>(400, 352)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1069,7 +1132,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(272, 680)</value>
+      <value>(224, 528)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1093,7 +1156,7 @@
     </param>
     <param>
       <key>showports</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>vector_len</key>
@@ -1116,7 +1179,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(64, 636)</value>
+      <value>(64, 476)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1151,7 +1214,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(632, 552)</value>
+      <value>(632, 392)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1186,7 +1249,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(512, 712)</value>
+      <value>(392, 544)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1199,73 +1262,6 @@
     <param>
       <key>type</key>
       <value>int</value>
-    </param>
-  </block>
-  <block>
-    <key>qtgui_edit_box_msg</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(272, 784)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>180</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>qtgui_edit_box_msg_0</value>
-    </param>
-    <param>
-      <key>key</key>
-      <value>recalc</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value>Recalcuate Sample Offset</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>is_pair</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>is_static</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>int</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>10</value>
     </param>
   </block>
   <block>
@@ -1304,11 +1300,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(752, 488)</value>
+      <value>(744, 328)</value>
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>1,0,1,3</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1576,7 +1572,7 @@
     </param>
     <param>
       <key>size</key>
-      <value>slope_samples</value>
+      <value>int(rtl_samp_rate/float(n_points)/3)</value>
     </param>
     <param>
       <key>srate</key>
@@ -2935,7 +2931,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 244)</value>
+      <value>(8, 84)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4342,7 +4338,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 420)</value>
+      <value>(8, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4528,12 +4524,6 @@
     <sink_block_id>probe82</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>qtgui_edit_box_msg_0</source_block_id>
-    <sink_block_id>doa_sample_offset_cci_0</sink_block_id>
-    <source_key>msg</source_key>
-    <sink_key>recalc</sink_key>
   </connection>
   <connection>
     <source_block_id>rtlsdr_source_0</source_block_id>
