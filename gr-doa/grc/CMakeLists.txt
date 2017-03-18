@@ -34,5 +34,6 @@ install(FILES
     doa_full_capon_ccf.xml
     doa_full_capon3_ccf.xml
     doa_multiply_exp_cc.xml
-    doa_pi2pi_ff.xml DESTINATION share/gnuradio/grc/blocks
+    doa_pi2pi_ff.xml
+    doa_arrow_f.xml DESTINATION share/gnuradio/grc/blocks
 )
