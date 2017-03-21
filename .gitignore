@@ -1,3 +1,5 @@
 gr-doa/build/
 flowgraphs/*.py
 gr-doa/python/*.pyc
+gr-doa/out/
+gr-doa/x-compile/out/
