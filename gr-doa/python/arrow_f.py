@@ -20,7 +20,7 @@
 # 
 
 import numpy
-import datetime
+from time import sleep
 from gnuradio import gr
 from PyQt4 import Qt, QtCore, QtGui
 
@@ -28,7 +28,7 @@ class arrow_f(gr.sync_block, QtGui.QWidget):
     """
     needs simplearrowup.png
     """
-    def __init__(self,blkname="arrow_f", label="", *args):
+    def __init__(self, *args):
         gr.sync_block.__init__(self,
             name="arrow_f",
             in_sig=[numpy.float32],
@@ -39,10 +39,6 @@ class arrow_f(gr.sync_block, QtGui.QWidget):
         
         # angle starts at 0
         self.angle = 0
-        
-        # time at construction
-#        self.last_time = datetime.datetime.now()
-#        self.curr_time = self.last_time
 
     
     def paintEvent(self, e):
@@ -69,24 +65,9 @@ class arrow_f(gr.sync_block, QtGui.QWidget):
 
     def work(self, input_items, output_items):
         in0 = input_items[0]
- 
-        # update only using the last sample given
+
+        # use the last sample to update
         self.rotateArrow(in0[-1])
-        
-        # update using every 100th sample
-#        for sample in in0[::1000]:
-#          self.rotateArrow(sample)
-
-        # update the current time
-#        self.curr_time = datetime.datetime.now()
-        
-        # find the time elapsed since our last update
-#       self.time_diff = self.curr_time - self.last_time        
-
-        # if it's been long enough, update the display
-#        if (self.time_diff.microseconds > .01e6):
-#          self.last_time = self.curr_time
-#          self.rotateArrow(in0[-1])
 
         return len(input_items[0])
 
