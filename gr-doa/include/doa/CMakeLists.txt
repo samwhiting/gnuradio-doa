@@ -38,5 +38,6 @@ install(FILES
     full_capon_ccf.h
     full_capon3_ccf.h
     multiply_exp_cc.h
-    pi2pi_ff.h DESTINATION include/doa
+    pi2pi_ff.h
+    DESTINATION include/doa
 )

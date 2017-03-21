@@ -68,3 +68,4 @@ GR_SWIG_BLOCK_MAGIC2(doa, full_capon3_ccf);
 GR_SWIG_BLOCK_MAGIC2(doa, multiply_exp_cc);
 %include "doa/pi2pi_ff.h"
 GR_SWIG_BLOCK_MAGIC2(doa, pi2pi_ff);
+

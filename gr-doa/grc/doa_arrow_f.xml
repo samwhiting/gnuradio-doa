@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<block>
+  <name>DOA Arrow</name>
+  <key>doa_arrow_f</key>
+  <category>[doa]</category>
+  <import>import doa</import>
+  <make>#set $win = 'self._%s_win'%$id
+doa.arrow_f()
+self._$(id)_win = self.$(id);
+$(gui_hint()($win))
+  </make>
+
+  <param>
+    <name>GUI Hint</name>
+    <key>gui_hint</key>
+    <value></value>
+    <type>gui_hint</type>
+    <hide>part</hide>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+</block>
