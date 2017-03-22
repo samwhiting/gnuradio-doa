@@ -39,5 +39,5 @@ install(FILES
     full_capon3_ccf.h
     multiply_exp_cc.h
     pi2pi_ff.h
-    DESTINATION include/doa
+    delay.h DESTINATION include/doa
 )
