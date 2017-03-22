@@ -49,6 +49,9 @@ namespace gr {
       }
       set_dly(delay);
       d_delta = 0;
+
+      message_port_register_in(pmt::mp("msg"));
+      set_msg_handler(pmt::mp("msg"), boost::bind(&delay_impl::handle_msg, this, _1));
     }
 
     delay_impl::~delay_impl()
@@ -78,6 +81,18 @@ namespace gr {
         declare_sample_delay(history()-1);
         d_delta += dly() - old;
       }
+    }
+
+    void
+    delay_impl::handle_msg(pmt::pmt_t msg) {
+        printf("delay received message\n");
+        if (pmt::is_number(msg)) {
+            int value = pmt::to_long(msg);
+            printf("setting delay to %d\n", value);
+            set_dly(value);
+        } else {
+            printf("message is not a number\n");
+        }
     }
 
     int

@@ -38,6 +38,7 @@ namespace gr {
       size_t d_itemsize;
       int d_delta;
       gr::thread::mutex d_mutex_delay;
+      void handle_msg(pmt::pmt_t msg);
 
     public:
       delay_impl(size_t itemsize, int delay);

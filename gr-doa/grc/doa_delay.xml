@@ -7,6 +7,7 @@
 <block>
 	<name>Delay</name>
 	<key>doa_delay</key>
+    <category>[doa]</category>
 	<import>import doa</import>
 	<make>doa.delay($type.size*$vlen, $delay)</make>
 	<callback>set_dly($delay)</callback>
@@ -58,6 +59,21 @@
 		<value>1</value>
 		<type>int</type>
 	</param>
+    <param>
+        <name>Show Msg Ports</name>
+        <key>showports</key>
+        <value>True</value>
+        <type>enum</type>
+        <hide>part</hide>
+        <option>
+            <name>Yes</name>
+            <key>False</key>
+        </option>
+        <option>
+            <name>No</name>
+            <key>True</key>
+        </option>
+    </param>
 	<check>$num_ports &gt; 0</check>
 	<check>$vlen &gt; 0</check>
 	<sink>
@@ -66,6 +82,12 @@
 		<vlen>$vlen</vlen>
 		<nports>$num_ports</nports>
 	</sink>
+    <sink>
+        <name>msg</name>
+        <type>message</type>
+        <optional>1</optional>
+        <hide>$showports</hide>
+    </sink>
 	<source>
 		<name>out</name>
 		<type>$type</type>
