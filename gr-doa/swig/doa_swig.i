@@ -26,6 +26,7 @@
 #include "doa/multiply_exp_cc.h"
 #include "doa/pi2pi_ff.h"
 #include "doa/delay.h"
+#include "doa/message_sink_i.h"
 %}
 
 
@@ -72,3 +73,5 @@ GR_SWIG_BLOCK_MAGIC2(doa, pi2pi_ff);
 
 %include "doa/delay.h"
 GR_SWIG_BLOCK_MAGIC2(doa, delay);
+%include "doa/message_sink_i.h"
+GR_SWIG_BLOCK_MAGIC2(doa, message_sink_i);

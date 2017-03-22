@@ -80,18 +80,17 @@ namespace gr {
         set_history(d+1);
         declare_sample_delay(history()-1);
         d_delta += dly() - old;
+        printf("delay set to %d\n", d);
       }
     }
 
     void
     delay_impl::handle_msg(pmt::pmt_t msg) {
-        printf("delay received message\n");
         if (pmt::is_number(msg)) {
             int value = pmt::to_long(msg);
-            printf("setting delay to %d\n", value);
             set_dly(value);
         } else {
-            printf("message is not a number\n");
+            GR_LOG_WARN(d_logger, boost::format("Delay message must be a number"));
         }
     }
 
@@ -158,3 +157,4 @@ namespace gr {
 
   } /* namespace doa */
 } /* namespace gr */
+
