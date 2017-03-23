@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <block>
-  <name>Capon DOA</name>
+  <name>PCA DOA</name>
   <key>doa_capon_ccf</key>
   <category>[doa]</category>
   <import>import doa</import>
