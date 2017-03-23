@@ -39,10 +39,12 @@ class arrow_f(gr.sync_block, QtGui.QWidget):
         
         # angle starts at 0
         self.angle = 0
+        
+        self.setMinimumWidth(100)
+        self.setMinimumHeight(100)
 
-    
     def paintEvent(self, e):
-#      print("Paint event ran\n")
+      print("Paint event ran\n")
 
       # transform object to rotate the image
       transform = QtGui.QTransform(1,0,0,1, self.width()/2, self.height()/2)
@@ -55,9 +57,10 @@ class arrow_f(gr.sync_block, QtGui.QWidget):
       painter = QtGui.QPainter(self)
       painter.setTransform(transform)
       painter.drawPixmap(-arrow.width()/2,-arrow.height()/2, arrow) 
+#      painter.drawPixmap(100,100,arrow) 
 
     def rotateArrow(self, new_angle):
-#      print("Rotate Arrow  ran\n")
+      print("Rotate Arrow  ran\n")
       # rotate our image by the input (radians)
       self.angle = numpy.rad2deg(new_angle)/2
       # draw
