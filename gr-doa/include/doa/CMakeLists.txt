@@ -40,5 +40,6 @@ install(FILES
     multiply_exp_cc.h
     pi2pi_ff.h
     delay.h
-    message_sink_i.h DESTINATION include/doa
+    message_sink_i.h
+    message_sink_f.h DESTINATION include/doa
 )

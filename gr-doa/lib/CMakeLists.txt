@@ -43,7 +43,8 @@ list(APPEND doa_sources
     multiply_exp_cc_impl.cc
     pi2pi_ff_impl.cc
     delay_impl.cc
-    message_sink_i_impl.cc )
+    message_sink_i_impl.cc
+    message_sink_f_impl.cc )
 
 set(doa_sources "${doa_sources}" PARENT_SCOPE)
 if(NOT doa_sources)

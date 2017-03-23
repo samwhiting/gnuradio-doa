@@ -23,12 +23,13 @@ compile_sources:
 	$(CXX) $(EXTRA_CFLAGS) $(INC_PATH) -c $(SRC_PATH)/lib/sample_offset_cci_impl.cc -o $(OUT)/sample_offset_cci.o
 	$(CXX) $(EXTRA_CFLAGS) $(INC_PATH) -c $(SRC_PATH)/lib/delay_impl.cc -o $(OUT)/delay.o
 	$(CXX) $(EXTRA_CFLAGS) $(INC_PATH) -c $(SRC_PATH)/lib/message_sink_i_impl.cc -o $(OUT)/message_sink_i.o
+	$(CXX) $(EXTRA_CFLAGS) $(INC_PATH) -c $(SRC_PATH)/lib/message_sink_f_impl.cc -o $(OUT)/message_sink_f.o
 
 create_static_lib:
-	$(AR) rcs $(OUT)/$(LIB_NAME).a $(OUT)/capon_ccf.o $(OUT)/sample_offset_cci.o $(OUT)/delay.o $(OUT)/message_sink_i.o
+	$(AR) rcs $(OUT)/$(LIB_NAME).a $(OUT)/capon_ccf.o $(OUT)/sample_offset_cci.o $(OUT)/delay.o $(OUT)/message_sink_i.o $(OUT)/message_sink_f.o
 
 create_shared_lib:
-	$(CC) -shared -o $(OUT)/$(LIB_NAME).so $(OUT)/capon_ccf.o $(OUT)/sample_offset_cci.o $(OUT)/delay.o $(OUT)/message_sink_i.o
+	$(CC) -shared -o $(OUT)/$(LIB_NAME).so $(OUT)/capon_ccf.o $(OUT)/sample_offset_cci.o $(OUT)/delay.o $(OUT)/message_sink_i.o $(OUT)/message_sink_f.o
 
 install:
 	@echo ""
@@ -41,6 +42,7 @@ install:
 	cp $(SRC_PATH)/include/doa/sample_offset_cci.h $(SDKTARGETSYSROOT)/usr/include/doa
 	cp $(SRC_PATH)/include/doa/delay.h $(SDKTARGETSYSROOT)/usr/include/doa
 	cp $(SRC_PATH)/include/doa/message_sink_i.h $(SDKTARGETSYSROOT)/usr/include/doa
+	cp $(SRC_PATH)/include/doa/message_sink_f.h $(SDKTARGETSYSROOT)/usr/include/doa
 	@echo "  ** copied header files to $(SDKTARGETSYSROOT)/usr/include/doa"
 	@echo ""
 
