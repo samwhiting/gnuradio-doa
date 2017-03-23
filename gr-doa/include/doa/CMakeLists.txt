@@ -41,5 +41,6 @@ install(FILES
     pi2pi_ff.h
     delay.h
     message_sink_i.h
-    message_sink_f.h DESTINATION include/doa
+    message_sink_f.h
+    add_const_ff.h DESTINATION include/doa
 )

@@ -28,6 +28,7 @@
 #include "doa/delay.h"
 #include "doa/message_sink_i.h"
 #include "doa/message_sink_f.h"
+#include "doa/add_const_ff.h"
 %}
 
 
@@ -78,3 +79,5 @@ GR_SWIG_BLOCK_MAGIC2(doa, delay);
 GR_SWIG_BLOCK_MAGIC2(doa, message_sink_i);
 %include "doa/message_sink_f.h"
 GR_SWIG_BLOCK_MAGIC2(doa, message_sink_f);
+%include "doa/add_const_ff.h"
+GR_SWIG_BLOCK_MAGIC2(doa, add_const_ff);

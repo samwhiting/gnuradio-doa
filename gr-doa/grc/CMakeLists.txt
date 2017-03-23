@@ -38,5 +38,6 @@ install(FILES
     doa_arrow_f.xml
     doa_delay.xml
     doa_message_sink_i.xml
-    doa_message_sink_f.xml DESTINATION share/gnuradio/grc/blocks
+    doa_message_sink_f.xml
+    doa_add_const_ff.xml DESTINATION share/gnuradio/grc/blocks
 )
