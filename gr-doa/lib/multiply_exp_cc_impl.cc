@@ -44,6 +44,10 @@ namespace gr {
               gr::io_signature::make(1, 1, sizeof(gr_complex)))
     {
       set_arg(arg);
+
+      // a message port to reset the argument
+      message_port_register_in(pmt::mp("arg"));
+      set_msg_handler(pmt::mp("arg"), boost::bind(&multiply_exp_cc_impl::handle_arg, this, _1));
     }
 
     /*
@@ -53,6 +57,15 @@ namespace gr {
     {
     }
 
+    void
+    multiply_exp_cc_impl::handle_arg(pmt::pmt_t arg) {
+        if (pmt::is_number(arg)) {
+            float value = (float)pmt::to_double(arg);
+            set_arg(value);
+        } else {
+            GR_LOG_WARN(d_logger, boost::format("Exp arg message must be a number"));
+        }
+    }
 
     void multiply_exp_cc_impl::set_arg(float new_arg) {
         if (new_arg != d_arg) {

@@ -30,6 +30,7 @@ namespace gr {
     {
      private:
       float d_arg;
+      void handle_arg(pmt::pmt_t arg);
 
      public:
       multiply_exp_cc_impl(float arg);
