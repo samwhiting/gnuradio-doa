@@ -29,6 +29,7 @@
 #include "doa/message_sink_i.h"
 #include "doa/message_sink_f.h"
 #include "doa/add_const_ff.h"
+#include "doa/phase2doa_ff.h"
 %}
 
 
@@ -81,3 +82,5 @@ GR_SWIG_BLOCK_MAGIC2(doa, message_sink_i);
 GR_SWIG_BLOCK_MAGIC2(doa, message_sink_f);
 %include "doa/add_const_ff.h"
 GR_SWIG_BLOCK_MAGIC2(doa, add_const_ff);
+%include "doa/phase2doa_ff.h"
+GR_SWIG_BLOCK_MAGIC2(doa, phase2doa_ff);
