@@ -13,8 +13,8 @@
   <param>
     <name>Alpha</name>
     <key>alpha</key>
-    <type>float</type>
     <value>0.5</value>
+    <type>float</type>
   </param>
 
   <!-- Make one 'sink' node per input. Sub-nodes:
