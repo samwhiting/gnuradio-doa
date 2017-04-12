@@ -30,6 +30,7 @@
 #include "doa/message_sink_f.h"
 #include "doa/add_const_ff.h"
 #include "doa/phase2doa_ff.h"
+#include "doa/hold_state_ff.h"
 %}
 
 
@@ -84,3 +85,5 @@ GR_SWIG_BLOCK_MAGIC2(doa, message_sink_f);
 GR_SWIG_BLOCK_MAGIC2(doa, add_const_ff);
 %include "doa/phase2doa_ff.h"
 GR_SWIG_BLOCK_MAGIC2(doa, phase2doa_ff);
+%include "doa/hold_state_ff.h"
+GR_SWIG_BLOCK_MAGIC2(doa, hold_state_ff);

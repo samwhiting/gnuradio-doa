@@ -43,5 +43,6 @@ install(FILES
     message_sink_i.h
     message_sink_f.h
     add_const_ff.h
-    phase2doa_ff.h DESTINATION include/doa
+    phase2doa_ff.h
+    hold_state_ff.h DESTINATION include/doa
 )
