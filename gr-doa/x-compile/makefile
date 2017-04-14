@@ -24,12 +24,18 @@ compile_sources:
 	$(CXX) $(EXTRA_CFLAGS) $(INC_PATH) -c $(SRC_PATH)/lib/delay_impl.cc -o $(OUT)/delay.o
 	$(CXX) $(EXTRA_CFLAGS) $(INC_PATH) -c $(SRC_PATH)/lib/message_sink_i_impl.cc -o $(OUT)/message_sink_i.o
 	$(CXX) $(EXTRA_CFLAGS) $(INC_PATH) -c $(SRC_PATH)/lib/message_sink_f_impl.cc -o $(OUT)/message_sink_f.o
+	$(CXX) $(EXTRA_CFLAGS) $(INC_PATH) -c $(SRC_PATH)/lib/add_const_ff_impl.cc -o $(OUT)/add_const_ff.o
+	$(CXX) $(EXTRA_CFLAGS) $(INC_PATH) -c $(SRC_PATH)/lib/hold_state_ff_impl.cc -o $(OUT)/hold_state_ff.o
+	$(CXX) $(EXTRA_CFLAGS) $(INC_PATH) -c $(SRC_PATH)/lib/pi2pi_ff_impl.cc -o $(OUT)/pi2pi_ff.o
+	$(CXX) $(EXTRA_CFLAGS) $(INC_PATH) -c $(SRC_PATH)/lib/phase2doa_ff_impl.cc -o $(OUT)/phase2doa_ff.o
 
 create_static_lib:
-	$(AR) rcs $(OUT)/$(LIB_NAME).a $(OUT)/capon_ccf.o $(OUT)/sample_offset_cci.o $(OUT)/delay.o $(OUT)/message_sink_i.o $(OUT)/message_sink_f.o
+	$(AR) rcs $(OUT)/$(LIB_NAME).a $(OUT)/capon_ccf.o $(OUT)/sample_offset_cci.o $(OUT)/delay.o $(OUT)/message_sink_i.o $(OUT)/message_sink_f.o \
+	$(OUT)/add_const_ff.o $(OUT)/hold_state_ff.o $(OUT)/pi2pi_ff.o $(OUT)/phase2doa_ff.o
 
 create_shared_lib:
-	$(CC) -shared -o $(OUT)/$(LIB_NAME).so $(OUT)/capon_ccf.o $(OUT)/sample_offset_cci.o $(OUT)/delay.o $(OUT)/message_sink_i.o $(OUT)/message_sink_f.o
+	$(CC) -shared -o $(OUT)/$(LIB_NAME).so $(OUT)/capon_ccf.o $(OUT)/sample_offset_cci.o $(OUT)/delay.o $(OUT)/message_sink_i.o $(OUT)/message_sink_f.o \
+	$(OUT)/add_const_ff.o $(OUT)/hold_state_ff.o $(OUT)/pi2pi_ff.o $(OUT)/phase2doa_ff.o
 
 install:
 	@echo ""
@@ -43,6 +49,10 @@ install:
 	cp $(SRC_PATH)/include/doa/delay.h $(SDKTARGETSYSROOT)/usr/include/doa
 	cp $(SRC_PATH)/include/doa/message_sink_i.h $(SDKTARGETSYSROOT)/usr/include/doa
 	cp $(SRC_PATH)/include/doa/message_sink_f.h $(SDKTARGETSYSROOT)/usr/include/doa
+	cp $(SRC_PATH)/include/doa/add_const_ff.h $(SDKTARGETSYSROOT)/usr/include/doa
+	cp $(SRC_PATH)/include/doa/hold_state_ff.h $(SDKTARGETSYSROOT)/usr/include/doa
+	cp $(SRC_PATH)/include/doa/pi2pi_ff.h $(SDKTARGETSYSROOT)/usr/include/doa
+	cp $(SRC_PATH)/include/doa/phase2doa_ff.h $(SDKTARGETSYSROOT)/usr/include/doa
 	@echo "  ** copied header files to $(SDKTARGETSYSROOT)/usr/include/doa"
 	@echo ""
 
