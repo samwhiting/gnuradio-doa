@@ -1,0 +1,12 @@
+block:
+ name: Pi2Pi
+ key: doa_pi2pi_ff
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.pi2pi_ff()"
+ sink:
+  name: in
+  type: float
+ source:
+  name: out
+  type: float

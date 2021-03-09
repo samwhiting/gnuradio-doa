@@ -1,0 +1,17 @@
+block:
+ name: Hold
+ key: doa_hold_ii
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.hold_ii($hold)"
+ callback: "set_hold($hold)"
+ param:
+  name: Hold
+  key: hold
+  type: bool
+ sink:
+  name: in
+  type: int
+ source:
+  name: out
+  type: int

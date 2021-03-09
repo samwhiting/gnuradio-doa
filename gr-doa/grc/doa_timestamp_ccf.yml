@@ -1,0 +1,16 @@
+block:
+ name: Timestamp
+ key: doa_timestamp_ccf
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.timestamp_ccf()"
+ sink:
+  name: in
+  type: float
+ source:
+  -
+   name: data
+   type: float
+  -
+   name: time
+   type: float

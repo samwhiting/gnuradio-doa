@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<block>
+  <name>Full Capon 3</name>
+  <key>doa_full_capon3_ccf</key>
+  <category>[doa]</category>
+  <import>import doa</import>
+  <make>doa.full_capon3_ccf($vec_in, $vec_out)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Vector In</name>
+    <key>vec_in</key>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>Vector Out</name>
+    <key>vec_out</key>
+    <type>int</type>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>in0</name>
+    <type>complex</type>
+    <vlen>$vec_in</vlen>
+  </sink>
+
+  <sink>
+    <name>in1</name>
+    <type>complex</type>
+    <vlen>$vec_in</vlen>
+  </sink>
+
+  <sink>
+    <name>in2</name>
+    <type>complex</type>
+    <vlen>$vec_in</vlen>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>out</name>
+    <type>float</type>
+    <vlen>$vec_out</vlen>
+  </source>
+</block>

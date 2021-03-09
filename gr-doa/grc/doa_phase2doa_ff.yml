@@ -1,0 +1,17 @@
+block:
+ name: "Phase to DOA"
+ key: doa_phase2doa_ff
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.phase2doa_ff($alpha)"
+ param:
+  name: Alpha
+  key: alpha
+  value: "0.5"
+  type: float
+ sink:
+  name: in
+  type: float
+ source:
+  name: out
+  type: float

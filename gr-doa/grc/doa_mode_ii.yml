@@ -1,0 +1,22 @@
+block:
+ name: Mode
+ key: doa_mode_ii
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.mode_ii($vector_size, $max_value)"
+ param:
+  -
+   name: "Vector Length"
+   key: vector_size
+   type: int
+  -
+   name: "Max Value"
+   key: max_value
+   type: int
+ sink:
+  name: in
+  type: int
+  vlen: "$vector_size"
+ source:
+  name: out
+  type: int

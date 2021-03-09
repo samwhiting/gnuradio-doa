@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<block>
+  <name>Hold</name>
+  <key>doa_hold_ii</key>
+  <category>[doa]</category>
+  <import>import doa</import>
+  <make>doa.hold_ii($hold)</make>
+  <callback>set_hold($hold)</callback>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Hold</name>
+    <key>hold</key>
+    <type>bool</type>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>in</name>
+    <type>int</type>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>out</name>
+    <type>int</type>
+  </source>
+</block>

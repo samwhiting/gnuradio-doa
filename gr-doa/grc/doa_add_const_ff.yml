@@ -1,0 +1,21 @@
+block:
+ name: "Add Const F"
+ key: doa_add_const_ff
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.add_const_ff()"
+ callback: "set_const($const)"
+ param:
+  name: Constant
+  key: const
+  type: float
+ sink:
+  -
+   name: in
+   type: float
+  -
+   name: msg
+   type: message
+ source:
+  name: out
+  type: float

@@ -1,0 +1,12 @@
+block:
+ name: "Message Sink F"
+ key: doa_message_sink_f
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.message_sink_f()"
+ sink:
+  name: in
+  type: float
+ source:
+  name: out
+  type: message

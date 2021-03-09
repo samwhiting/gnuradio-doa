@@ -1,0 +1,49 @@
+block:
+ name: "Cubic Align"
+ key: doa_cub_delay_cc
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.cub_delay_cc($samp_rate, $delay)"
+ callback: "set_dly($delay)"
+ param:
+  -
+   name: "Sample Rate"
+   key: samp_rate
+   type: int
+  -
+   name: Delay
+   key: delay
+   value: 0
+   type: float
+  -
+   name: "Show Msg Ports"
+   key: showports
+   value: True
+   type: enum
+   hide: part
+   option:
+    -
+   name: Yes
+     key: False
+    -
+   name: No
+     key: True
+ sink:
+  -
+   name: ref
+   type: complex
+  -
+   name: in
+   type: complex
+  -
+   name: reset
+   type: message
+   optional: 1
+   hide: "$showports"
+ source:
+  -
+   name: ref
+   type: complex
+  -
+   name: out
+   type: complex

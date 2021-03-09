@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<block>
+  <name>Zero Pad</name>
+  <key>doa_zero_pad_cc</key>
+  <category>[doa]</category>
+  <import>import doa</import>
+  <make>doa.zero_pad_cc($vec_len_in, $vec_len_out)</make>
+
+  <param>
+    <name>Vector In Length</name>
+    <key>vec_len_in</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Vector Out Length</name>
+    <key>vec_len_out</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+
+ <sink>
+    <name>in</name>
+    <type>complex</type>
+    <vlen>$vec_len_in</vlen>
+  </sink>
+
+ <source>
+    <name>out</name>
+    <type>complex</type>
+    <vlen>$vec_len_out</vlen>
+  </source>
+</block>

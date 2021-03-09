@@ -1,0 +1,31 @@
+block:
+ name: "Linear Align"
+ key: doa_lin_delay_cc
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.lin_delay_cc($samp_rate, $delay)"
+ callback: "set_dly($delay)"
+ param:
+  -
+   name: "Sample Rate"
+   key: samp_rate
+   type: int
+  -
+   name: Delay
+   key: delay
+   value: 0
+   type: float
+ sink:
+  -
+   name: ref
+   type: complex
+  -
+   name: in
+   type: complex
+ source:
+  -
+   name: ref
+   type: complex
+  -
+   name: out
+   type: complex

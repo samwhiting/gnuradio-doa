@@ -1,0 +1,22 @@
+block:
+ name: "Multiply Exp"
+ key: doa_multiply_exp_cc
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.multiply_exp_cc($arg)"
+ callback: "set_arg($arg)"
+ param:
+  name: Argument
+  key: arg
+  type: float
+ sink:
+  -
+   name: in
+   type: complex
+  -
+   name: arg
+   type: message
+   optional: 1
+ source:
+  name: out
+  type: complex

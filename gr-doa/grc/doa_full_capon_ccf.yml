@@ -1,0 +1,28 @@
+block:
+ name: "Full Capon"
+ key: doa_full_capon_ccf
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.full_capon_ccf($vec_in, $vec_out)"
+ param:
+  -
+   name: "Vector In"
+   key: vec_in
+   type: int
+  -
+   name: "Vector Out"
+   key: vec_out
+   type: int
+ sink:
+  -
+   name: in0
+   type: complex
+   vlen: "$vec_in"
+  -
+   name: in1
+   type: complex
+   vlen: "$vec_in"
+ source:
+  name: out
+  type: float
+  vlen: "$vec_out"

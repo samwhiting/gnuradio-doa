@@ -1,0 +1,18 @@
+block:
+ name: Variance
+ key: doa_variance_ff
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.variance_ff($vec_len)"
+ param:
+  name: "Vector Length"
+  key: vec_len
+  value: 1
+  type: int
+ sink:
+  name: in
+  type: float
+  vlen: "$vec_len"
+ source:
+  name: out
+  type: float

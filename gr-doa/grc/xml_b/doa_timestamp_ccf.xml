@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<block>
+  <name>Timestamp</name>
+  <key>doa_timestamp_ccf</key>
+  <category>[doa]</category>
+  <import>import doa</import>
+  <make>doa.timestamp_ccf()</make>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+      <name>data</name>
+      <type>float</type>
+  </source>
+  <source>
+      <name>time</name>
+      <type>float</type>
+  </source>
+</block>

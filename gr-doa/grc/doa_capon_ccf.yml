@@ -1,0 +1,23 @@
+block:
+ name: "PCA DOA"
+ key: doa_capon_ccf
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.capon_ccf($vlen)"
+ param:
+  name: "Vector Length"
+  key: vlen
+  value: 1
+  type: int
+ sink:
+  -
+   name: in0
+   type: complex
+   vlen: "$vlen"
+  -
+   name: in1
+   type: complex
+   vlen: "$vlen"
+ source:
+  name: out
+  type: float

@@ -1,0 +1,82 @@
+block:
+ name: Delay
+ key: doa_delay
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.delay($type.size*$vlen, $delay)"
+ callback: "set_dly($delay)"
+ param:
+  -
+   name: Type
+   key: type
+   type: enum
+   option:
+    -
+   name: Complex
+     key: complex
+     opt: "size:gr.sizeof_gr_complex"
+    -
+   name: Float
+     key: float
+     opt: "size:gr.sizeof_float"
+    -
+   name: Int
+     key: int
+     opt: "size:gr.sizeof_int"
+    -
+   name: Short
+     key: short
+     opt: "size:gr.sizeof_short"
+    -
+   name: Byte
+     key: byte
+     opt: "size:gr.sizeof_char"
+  -
+   name: Delay
+   key: delay
+   value: 0
+   type: int
+  -
+   name: "Num Ports"
+   key: num_ports
+   value: 1
+   type: int
+  -
+   name: "Vec Length"
+   key: vlen
+   value: 1
+   type: int
+  -
+   name: "Show Msg Ports"
+   key: showports
+   value: True
+   type: enum
+   hide: part
+   option:
+    -
+   name: Yes
+     key: False
+    -
+   name: No
+     key: True
+ check:
+  -
+   "$num_ports > 0"
+  -
+   "$vlen > 0"
+ sink:
+  -
+   name: in
+   type: "$type"
+   vlen: "$vlen"
+   nports: "$num_ports"
+  -
+   name: msg
+   type: message
+   optional: 1
+   hide: "$showports"
+ source:
+  name: out
+  type: "$type"
+  vlen: "$vlen"
+  nports: "$num_ports"

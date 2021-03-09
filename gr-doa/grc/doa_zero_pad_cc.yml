@@ -1,0 +1,25 @@
+block:
+ name: "Zero Pad"
+ key: doa_zero_pad_cc
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.zero_pad_cc($vec_len_in, $vec_len_out)"
+ param:
+  -
+   name: "Vector In Length"
+   key: vec_len_in
+   value: 1
+   type: int
+  -
+   name: "Vector Out Length"
+   key: vec_len_out
+   value: 1
+   type: int
+ sink:
+  name: in
+  type: complex
+  vlen: "$vec_len_in"
+ source:
+  name: out
+  type: complex
+  vlen: "$vec_len_out"

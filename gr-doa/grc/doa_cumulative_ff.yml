@@ -1,0 +1,37 @@
+block:
+ name: "Cumulative Sum"
+ key: doa_cumulative_ff
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.cumulative_ff($start)"
+ param:
+  -
+   name: "Default Value"
+   key: start
+   value: 0
+   type: float
+  -
+   name: "Show Msg Ports"
+   key: showports
+   value: True
+   type: enum
+   hide: part
+   option:
+    -
+   name: Yes
+     key: False
+    -
+   name: No
+     key: True
+ sink:
+  -
+   name: in
+   type: float
+  -
+   name: reset
+   type: message
+   optional: 1
+   hide: "$showports"
+ source:
+  name: out
+  type: float

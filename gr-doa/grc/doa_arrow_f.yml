@@ -1,0 +1,15 @@
+block:
+ name: "DOA Arrow"
+ key: doa_arrow_f
+ category: "[doa]"
+ import: "import doa"
+ make: "#set $win = 'self._%s_win'%$id\ndoa.arrow_f()\nself._$(id)_win = self.$(id);\n$(gui_hint()($win))"
+ param:
+  name: "GUI Hint"
+  key: gui_hint
+  value: ""
+  type: gui_hint
+  hide: part
+ sink:
+  name: in
+  type: float

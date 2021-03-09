@@ -1,0 +1,22 @@
+block:
+ name: "Peak Estimator"
+ key: doa_peak_estimator_cif
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.peak_estimator_cif($vector_len)"
+ param:
+  name: "Vector Length"
+  key: vector_len
+  value: 1
+  type: int
+ sink:
+  name: in
+  type: complex
+  vlen: "$vector_len"
+ source:
+  -
+   name: bin
+   type: int
+  -
+   name: delta
+   type: float

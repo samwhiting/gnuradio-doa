@@ -1,0 +1,47 @@
+block:
+ name: "Sample Offset"
+ key: doa_sample_offset_cci
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.sample_offset_cci($vector_len, $num_xcorr)"
+ param:
+  -
+   name: "Vector Length"
+   key: vector_len
+   value: 1
+   type: int
+  -
+   name: Iterations
+   key: num_xcorr
+   value: 1
+   type: int
+  -
+   name: "Show Msg Ports"
+   key: showports
+   value: True
+   type: enum
+   hide: part
+   option:
+    -
+   name: Yes
+     key: False
+    -
+   name: No
+     key: True
+ sink:
+  -
+   name: in0
+   type: complex
+   vlen: "$vector_len"
+  -
+   name: in1
+   type: complex
+   vlen: "$vector_len"
+  -
+   name: recalc
+   type: message
+   optional: 1
+   hide: "$showports"
+ source:
+  name: out
+  type: int

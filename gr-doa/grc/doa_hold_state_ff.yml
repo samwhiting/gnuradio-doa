@@ -1,0 +1,33 @@
+block:
+ name: "Hold State"
+ key: doa_hold_state_ff
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.hold_state_ff($state, $scale0, $scale1)"
+ param:
+  -
+   name: State
+   key: state
+   value: 0
+   type: int
+  -
+   name: "Scale 0"
+   key: scale0
+   value: "-1"
+   type: float
+  -
+   name: "Scale 1"
+   key: scale1
+   value: 0
+   type: float
+ sink:
+  -
+   name: in
+   type: float
+  -
+   name: state
+   type: message
+   optional: 1
+ source:
+  name: out
+  type: float

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<block>
+  <name>Cubic Align</name>
+  <key>doa_cub_delay_cc</key>
+  <category>[doa]</category>
+  <import>import doa</import>
+  <make>doa.cub_delay_cc($samp_rate, $delay)</make>
+  <callback>set_dly($delay)</callback>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+      <name>Sample Rate</name>
+      <key>samp_rate</key>
+      <type>int</type>
+  </param>
+  <param>
+      <name>Delay</name>
+      <key>delay</key>
+      <value>0</value>
+      <type>float</type>
+  </param>
+  <param>
+      <name>Show Msg Ports</name>
+      <key>showports</key>
+      <value>True</value>
+      <type>enum</type>
+      <hide>part</hide>
+      <option>
+          <name>Yes</name>
+          <key>False</key>
+      </option>
+      <option>
+          <name>No</name>
+          <key>True</key>
+      </option>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+      <name>ref</name>
+      <type>complex</type>
+  </sink>
+  <sink>
+      <name>in</name>
+      <type>complex</type>
+  </sink>
+  <sink>
+      <name>reset</name>
+      <type>message</type>
+      <optional>1</optional>
+      <hide>$showports</hide>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+      <name>ref</name>
+      <type>complex</type>
+  </source>
+  <source>
+      <name>out</name>
+      <type>complex</type>
+  </source>
+</block>

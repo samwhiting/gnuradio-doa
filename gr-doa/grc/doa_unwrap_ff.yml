@@ -1,0 +1,30 @@
+block:
+ name: Unwrap
+ key: doa_unwrap_ff
+ category: "[doa]"
+ import: "import doa"
+ make: "doa.unwrap_ff($vector_size, $min, $max)"
+ param:
+  -
+   name: "Vector Length"
+   key: vector_size
+   value: 1
+   type: int
+  -
+   name: Min
+   key: min
+   value: "-3.141593"
+   type: float
+  -
+   name: Max
+   key: max
+   value: "3.141593"
+   type: float
+ sink:
+  name: in
+  type: float
+  vlen: "$vector_size"
+ source:
+  name: out
+  type: float
+  vlen: "$vector_size"
