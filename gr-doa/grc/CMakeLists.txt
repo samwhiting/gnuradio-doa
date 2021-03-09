@@ -1,4 +1,4 @@
-# Copyright 2011 Free Software Foundation, Inc.
+# cOPYRIGHT 2011 fREE sOFTWARE foundation, Inc.
 #
 # This file is part of GNU Radio
 #
@@ -17,29 +17,29 @@
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
 install(FILES
-    doa_capon_ccf.xml
-    doa_timestamp_ccf.xml
-    doa_unwrap_ff.xml
-    doa_linearslope_ff.xml
-    doa_mode_ii.xml
-    doa_lin_delay_cc.xml
-    doa_peak_estimator_cif.xml
-    doa_cub_delay_cc.xml
-    doa_cumulative_ff.xml
-    doa_variance_ff.xml
-    doa_zero_pad_cc.xml
-    doa_sample_offset_cci.xml
-    doa_hold_ii.xml
-    doa_hold_ff.xml
-    doa_full_capon_ccf.xml
-    doa_full_capon3_ccf.xml
-    doa_multiply_exp_cc.xml
-    doa_pi2pi_ff.xml
-    doa_arrow_f.xml
-    doa_delay.xml
-    doa_message_sink_i.xml
-    doa_message_sink_f.xml
-    doa_add_const_ff.xml
-    doa_phase2doa_ff.xml
-    doa_hold_state_ff.xml DESTINATION share/gnuradio/grc/blocks
+    doa_capon_ccf.yml
+    doa_timestamp_ccf.yml
+    doa_unwrap_ff.yml
+    doa_linearslope_ff.yml
+    doa_mode_ii.yml
+    doa_lin_delay_cc.yml
+    doa_peak_estimator_cif.yml
+    doa_cub_delay_cc.yml
+    doa_cumulative_ff.yml
+    doa_variance_ff.yml
+    doa_zero_pad_cc.yml
+    doa_sample_offset_cci.yml
+    doa_hold_ii.yml
+    doa_hold_ff.yml
+    doa_full_capon_ccf.yml
+    doa_full_capon3_ccf.yml
+    doa_multiply_exp_cc.yml
+    doa_pi2pi_ff.yml
+    doa_arrow_f.yml
+    doa_delay.yml
+    doa_message_sink_i.yml
+    doa_message_sink_f.yml
+    doa_add_const_ff.yml
+    doa_phase2doa_ff.yml
+    doa_hold_state_ff.yml DESTINATION share/gnuradio/grc/blocks
 )
